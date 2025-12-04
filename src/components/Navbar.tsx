@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Rocket, Menu, X } from "lucide-react";
 
@@ -15,10 +16,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: "Soluções", href: "#solucoes" },
-    { label: "Diferenciais", href: "#diferenciais" },
-    { label: "Clientes", href: "#clientes" },
-    { label: "Contato", href: "#contato" },
+    { label: "Soluções", href: "/#solucoes", type: "anchor" as const },
+    { label: "Diferenciais", href: "/#diferenciais", type: "anchor" as const },
+    { label: "Clientes", href: "/#clientes", type: "anchor" as const },
+    { label: "Estudos", href: "/estudos", type: "route" as const },
   ];
 
   return (
@@ -32,29 +33,31 @@ const Navbar = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
               <Rocket className="w-5 h-5 text-primary" />
             </div>
             <span className="font-display text-xl font-bold text-foreground">
               one station <span className="text-gradient">media</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <Button variant="glow" size="sm">
-              Fale Conosco
-            </Button>
+            <Link to="/#contato">
+              <Button variant="glow" size="sm">
+                Fale Conosco
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,18 +74,20 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button variant="glow" size="sm" className="mt-2">
-                Fale Conosco
-              </Button>
+              <Link to="/#contato" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="glow" size="sm" className="mt-2 w-full">
+                  Fale Conosco
+                </Button>
+              </Link>
             </div>
           </div>
         )}

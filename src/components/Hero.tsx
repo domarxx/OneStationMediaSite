@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Rocket, ChevronDown } from "lucide-react";
 
@@ -57,12 +58,16 @@ const Hero = () => {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up delay-500">
-            <Button variant="hero" size="lg">
-              Fale Conosco
-            </Button>
-            <Button variant="outline" size="lg">
-              Conheça os Serviços
-            </Button>
+            <Link to="/#contato">
+              <Button variant="hero" size="lg">
+                Fale Conosco
+              </Button>
+            </Link>
+            <Link to="/#solucoes">
+              <Button variant="outline" size="lg">
+                Conheça os Serviços
+              </Button>
+            </Link>
           </div>
         </div>
 
