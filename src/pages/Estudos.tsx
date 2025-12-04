@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { studies } from "@/data/studies";
 
 const Estudos = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
