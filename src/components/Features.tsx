@@ -1,28 +1,28 @@
-import { Monitor, Smartphone, Radio, Target } from "lucide-react";
+import { MapPinned, ScanFace, Store, Layers } from "lucide-react";
 
 const features = [
   {
-    icon: Monitor,
-    title: "MULTIPLATAFORMA",
-    description: "Acesso a 100% do inventário disponível no mundo através de compra programática avançada.",
+    icon: MapPinned,
+    title: "Precision Geo Lift IA",
+    description: "Inteligência que analisa Geofences baseado em mais de 400 fontes confiáveis. Reunindo dados demográficos, socioeconômicos e perfil de consumo, com isso realizamos um planejamento mais assertivo, com o objetivo de impactar o publico em áreas corretas e sem dispersão.",
     color: "primary",
   },
   {
-    icon: Radio,
-    title: "PROGRAMÁTICA",
-    description: "Tecnologia avançada para otimização automática e entrega precisa de campanhas.",
+    icon: ScanFace,
+    title: "Maximize User Awareness",
+    description: "Tecnologia de análise automática de publico saturado por anúncio, com menos propensão ao clique favorecendo o aumento de CTR, com isso garantimos um CTR mínimo de 1%, o que é um número aproximadamente 3X maior que a média do mercado.",
     color: "secondary",
   },
   {
-    icon: Smartphone,
-    title: "OMNICHANNEL",
-    description: "Integração completa entre mobile, CTV, DOOH e PDV em uma única estratégia.",
+    icon: Store,
+    title: "Drive to Store Footfall",
+    description: "Conecte até 50.000 pontos simultaneamente e análise performance em tempo real, publico observado, visitas atribuídas nas áreas de conversão das lojas, tempo impacto X visita, tempo medio de permanência, criativos.",
     color: "primary",
   },
   {
-    icon: Target,
-    title: "ALCANCE E IMPACTO",
-    description: "Resultados incomparáveis em awareness, consideration, retail e Brand Lift.",
+    icon: Layers,
+    title: "Formatos Diferenciados",
+    description: "Além de todos os formatos tradicionais (IABs, Vídeo, Áudio, Native e Push Notification, Social Prog), contamos com mais de 60 tipos diferentes de Rich Media, já pré-formatados e integrados em nossa plataforma.",
     color: "secondary",
   },
 ];
@@ -41,39 +41,52 @@ const Features = () => {
           </span>
         </div>
         
-        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 max-w-3xl">
-          Alcance e impacto <span className="text-gradient">acima da média</span> em toda jornada do funil
+        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 ">
+          Multiplataforma Programática <span className="text-gradient">Omnichannel</span>
         </h2>
         
-        <p className="text-lg text-muted-foreground max-w-2xl mb-16">
-          Reunindo a precisão de nossa tecnologia avançada e uma compra programática em 100% do inventário disponível no mundo.
+        <p className="text-lg text-muted-foreground mb-16">
+          Alcance e impacto acima da média em toda jornada do funil, reunindo a precisão de nossa tecnologia avançada e uma compra programática em 100% do inventário disponível no mundo. Desta forma, campanhas com objetivos awareness, consideration, retail e Brand Lift trazem sempre resultados incomparáveis.
         </p>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group card-gradient rounded-xl p-6 border border-border/50 hover-glow"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-lg mb-4 transition-colors ${
-                feature.color === 'primary' 
-                  ? 'bg-primary/20 text-primary group-hover:bg-primary/30' 
-                  : 'bg-secondary/20 text-secondary group-hover:bg-secondary/30'
-              }`}>
-                <feature.icon className="w-7 h-7" />
-              </div>
-              
-              <h3 className="font-display text-lg font-bold mb-2 text-foreground">
-                {feature.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+          
+        {features.map((feature, index) => (
+  <div
+    key={feature.title}
+    // 1. flex-col garante que o "Cabeçalho" fique em cima e a "Descrição" em baixo
+    className="group card-gradient rounded-xl p-6 border-2 border-dashed border-white/20 hover-glow flex flex-col"
+    style={{ animationDelay: `${index * 0.1}s` }}
+  >
+    
+    {/* --- BLOCO DO CABEÇALHO (Ícone + Título) --- */}
+    {/* items-center: Alinha o Título exatamente no meio vertical do Ícone */}
+    <div className="flex items-center gap-4 mb-4">
+      
+      {/* Ícone */}
+      <div className={`shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-lg transition-colors ${
+        feature.color === 'primary' 
+          ? 'bg-primary/20 text-primary group-hover:bg-primary/30' 
+          : 'bg-secondary/20 text-secondary group-hover:bg-secondary/30'
+      }`}>
+        <feature.icon className="w-[60%] h-[60%]" />
+      </div>
+
+      {/* Título */}
+      <h3 className="font-display text-lg font-bold text-foreground leading-tight">
+        {feature.title}
+      </h3>
+    </div>
+
+    {/* --- DESCRIÇÃO --- */}
+    {/* Fica fora do flex acima, ocupando a largura total abaixo */}
+    <p className="text-sm text-muted-foreground leading-relaxed">
+      {feature.description}
+    </p>
+
+  </div>
+))}
         </div>
       </div>
     </section>

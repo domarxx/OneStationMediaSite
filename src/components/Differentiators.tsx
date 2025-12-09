@@ -67,7 +67,7 @@ const Differentiators = () => {
           {differentiators.map((item, index) => (
             <div
               key={item.title}
-              className="flex gap-4 p-6 rounded-xl border border-border/30 bg-card/30 hover:bg-card/50 transition-colors group"
+              className="flex gap-4 p-6 rounded-xl border-2 border-dashed border-white/20 bg-card/30 hover:bg-card/50 transition-colors group"
             >
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">

@@ -3,20 +3,6 @@ import mobileHand from "@/assets/mobile-hand.jpg";
 
 const services = [
   {
-    icon: MapPin,
-    title: "GEO LIFT IA",
-    subtitle: "O PODER DA MÍDIA MÓVEL",
-    description: "Inteligência que analisa Geofences baseado em mais de 400 fontes confiáveis. Planejamento assertivo para impactar o público em áreas corretas sem dispersão.",
-    stats: ["13k Audiência", "122k População", "19k Fluxo"],
-  },
-  {
-    icon: Store,
-    title: "DRIVE TO STORE",
-    subtitle: "PDV COM O PÚBLICO CERTO",
-    description: "Conecte até 50.000 pontos simultaneamente e analise performance em tempo real: visitas atribuídas, tempo de permanência e criativos.",
-    stats: ["50k Pontos", "Real-time", "Conversão"],
-  },
-  {
     icon: Tv,
     title: "CTV + HHS",
     subtitle: "ONDE A TV TERMINA, O IMPACTO CONTINUA",
@@ -31,11 +17,18 @@ const services = [
     stats: ["16k Pontos", "30k Telas", "First Party"],
   },
   {
-    icon: BarChart3,
-    title: "MUA - MAXIMIZE USER AWARENESS",
-    subtitle: "CTR MÍNIMO GARANTIDO DE 1%",
-    description: "Tecnologia de análise automática de público saturado por anúncio, favorecendo o aumento de CTR - aproximadamente 3x maior da média do mercado.",
-    stats: ["1% CTR", "3x Média", "Otimizado"],
+    icon: MapPin,
+    title: "GEO LIFT IA",
+    subtitle: "O PODER DA MÍDIA MÓVEL",
+    description: "Inteligência que analisa Geofences baseado em mais de 400 fontes confiáveis. Planejamento assertivo para impactar o público em áreas corretas sem dispersão.",
+    stats: ["13k Audiência", "122k População", "19k Fluxo"],
+  },
+  {
+    icon: Store,
+    title: "DRIVE TO STORE",
+    subtitle: "PDV COM O PÚBLICO CERTO",
+    description: "Conecte até 50.000 pontos simultaneamente e analise performance em tempo real: visitas atribuídas, tempo de permanência e criativos.",
+    stats: ["50k Pontos", "Real-time", "Conversão"],
   },
   {
     icon: Layers,
@@ -50,14 +43,14 @@ const Services = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background image */}
-      <div 
-        className="absolute right-0 top-1/4 w-1/3 h-96 rounded-l-3xl overflow-hidden opacity-30 hidden lg:block"
-        style={{
-          backgroundImage: `url(${mobileHand})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <div
+  className="absolute right-0 top-0 bottom-0 w-1/2 lg:w-2/5 hidden lg:block z-0 [mask-image:linear-gradient(to_left,black,transparent)]"
+  style={{
+    backgroundImage: `url(${mobileHand})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center left',
+  }}
+>
         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background" />
       </div>
 
@@ -70,56 +63,80 @@ const Services = () => {
           </span>
         </div>
 
-        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 max-w-3xl">
+        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 ">
           Tecnologia de ponta para <span className="text-gradient">resultados excepcionais</span>
         </h2>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mb-16">
+        <p className="text-lg text-muted-foreground mb-16">
           Nossas soluções combinam inteligência artificial, dados geográficos e compra programática para maximizar o ROI das suas campanhas.
         </p>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="group relative card-gradient rounded-xl p-6 border border-border/50 hover-glow overflow-hidden"
+{/* Services Grid */}
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {services.map((service, index) => (
+    <div
+      key={service.title}
+      className="
+        group relative card-gradient rounded-xl p-6 
+        border-2 border-dashed border-white/20 
+        hover-glow overflow-hidden
+        flex flex-col h-full
+      "
+    >
+      {/* Corner accent (Mantido) */}
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      
+      {/* Wrapper de Conteúdo (z-10 para ficar acima do accent) */}
+      <div className="relative z-10 flex flex-col h-full">
+        
+        {/* --- CABEÇALHO: ÍCONE + TEXTOS --- */}
+        <div className="flex items-center gap-4 mb-4">
+          
+          {/* Ícone (Estilo Grande e Reforçado) */}
+          <div className="
+            shrink-0 inline-flex items-center justify-center 
+            w-16 h-16 rounded-lg transition-colors
+            bg-primary/20 text-primary group-hover:bg-primary/30
+          ">
+            <service.icon className="w-[60%] h-[60%]" />
+          </div>
+
+          {/* Coluna de Texto (Subtitle + Title) */}
+          <div className="flex flex-col justify-center">
+            {/* Título */}
+            <h3 className="font-display text-xl font-bold text-foreground leading-tight">
+              {service.title}
+            </h3>
+            {/* Subtitle (opcional, mantive pois estava no seu código) */}
+            <span className="text-xs text-muted-foreground tracking-wider uppercase mb-1">
+              {service.subtitle}
+            </span>
+          </div>
+
+        </div>
+        
+        {/* --- DESCRIÇÃO --- */}
+        {/* flex-1 empurra as stats para baixo */}
+        <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+          {service.description}
+        </p>
+
+        {/* --- STATS --- */}
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {service.stats.map((stat) => (
+            <span
+              key={stat}
+              className="text-xs px-3 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50"
             >
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent" />
-              
-              <div className="relative">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/20 text-primary mb-4 group-hover:bg-primary/30 transition-colors">
-                  <service.icon className="w-6 h-6" />
-                </div>
-
-                <span className="text-xs font-semibold text-primary tracking-wider uppercase">
-                  {service.subtitle}
-                </span>
-                
-                <h3 className="font-display text-xl font-bold mt-1 mb-3 text-foreground">
-                  {service.title}
-                </h3>
-                
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {service.description}
-                </p>
-
-                {/* Stats */}
-                <div className="flex flex-wrap gap-2">
-                  {service.stats.map((stat) => (
-                    <span
-                      key={stat}
-                      className="text-xs px-3 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50"
-                    >
-                      {stat}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+              {stat}
+            </span>
           ))}
         </div>
+
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );

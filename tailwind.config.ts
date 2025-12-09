@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "Inter", "sans-serif"],
+        sans: ["Roboto", "sans-serif"],
+        display: ["Poppins", "sans-serif"],
+        heading: ['Neris', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

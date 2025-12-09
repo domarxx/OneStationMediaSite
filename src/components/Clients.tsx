@@ -22,7 +22,7 @@ const Clients = () => {
           Clientes <span className="text-gradient">Atendidos</span>
         </h2>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mb-12">
+        <p className="text-lg text-muted-foreground mb-12">
           Trabalhamos com as maiores marcas do mercado global, entregando resultados excepcionais em campanhas de marketing digital.
         </p>
 

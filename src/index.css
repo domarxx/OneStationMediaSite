@@ -4,6 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Neris';
+  src: url('/fonts/neris.black.otf') format('opentype');
+  font-weight: 900; /* Black/Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neris';
+  src: url('/fonts/neris.black-italic.otf') format('opentype');
+  font-weight: 900; /* Black/Bold */
+  font-style: italic;
+}
+
 @layer base {
   :root {
     --background: 228 84% 5%;
@@ -15,11 +29,20 @@
     --popover: 228 60% 8%;
     --popover-foreground: 0 0% 98%;
 
+    --primary: 350 73% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 272 66% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    /*
+    Backup Abaixo
+
     --primary: 350 78% 52%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 280 70% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 100%;*/
 
     --muted: 228 40% 15%;
     --muted-foreground: 220 10% 60%;
@@ -40,7 +63,7 @@
     --gradient-dark: linear-gradient(135deg, hsl(228 84% 5%) 0%, hsl(270 50% 8%) 50%, hsl(228 84% 5%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(228 60% 10%) 0%, hsl(270 40% 12%) 100%);
     --gradient-glow: radial-gradient(ellipse at center, hsl(350 78% 52% / 0.15) 0%, transparent 70%);
-    --gradient-accent: linear-gradient(135deg, hsl(350 78% 52%) 0%, hsl(280 70% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(358 73% 49%) 50%, hsl(272 66% 56%) 100%);
     
     --shadow-glow: 0 0 60px hsl(350 78% 52% / 0.3);
     --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
@@ -57,6 +80,10 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading; 
   }
 
   html {
