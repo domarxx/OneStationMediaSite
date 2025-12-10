@@ -4,13 +4,46 @@ import { Rocket, ChevronDown } from "lucide-react";
 import LogoOSM from "@/assets/osm_icon.svg";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
 
+const DataBeams = () => {
+  // Criamos um array de 20 itens para gerar os feixes
+  const beams = Array.from({ length: 20 });
+
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {beams.map((_, i) => {
+        // Geramos valores aleatórios para cada feixe parecer único
+        const leftPos = Math.floor(Math.random() * 100); // Posição horizontal (0 a 100%)
+        const delay = Math.random() * 5; // Atraso aleatório (0 a 5s)
+        const duration = 2 + Math.random() * 3; // Duração aleatória (2s a 5s)
+        const height = 20 + Math.random() * 30; // Altura aleatória (20% a 50% da tela)
+
+        return (
+          <div
+            key={i}
+            className="absolute bottom-0 w-[2px] bg-gradient-to-t from-primary via-primary/50 to-transparent origin-bottom animate-beam opacity-0"
+            style={{
+              left: `${leftPos}%`,
+              height: `${height}%`,
+              animationDelay: `${delay}s`,
+              animationDuration: `${duration}s`,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Background */}
-      <div className="absolute inset-0 z-0 grid-background opacity-50 [mask-image:linear-gradient(to_bottom_right,black_10%,transparent)]"></div>  
+      {/* 1. Grid Background (Fixo) */}
+      <div className="absolute inset-0 z-0 grid-background opacity-40 bg-top [mask-image:linear-gradient(to_bottom,black_40%,transparent_95%)]"></div> 
       
+      {/* 2. NOVO: Feixes de Dados Verticais */}
+      <DataBeams />
+
       {/* Glow effect */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(350_78%_52%/0.08)_0%,transparent_60%)]" />
       

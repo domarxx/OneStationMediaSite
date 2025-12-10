@@ -82,6 +82,11 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        beam: {
+          "0%": { transform: "scaleY(0)", opacity: "0" }, // Começa invisível e sem altura
+          "50%": { opacity: "1" },                         // Aparece no meio do caminho
+          "100%": { transform: "scaleY(1.5)", opacity: "0" }, // Estica e desaparece
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -89,6 +94,7 @@ export default {
         float: "float 6s ease-in-out infinite",
         // Adicionei a animação scroll aqui dentro
         scroll: "scroll 40s linear infinite",
+        beam: "beam 2s ease-in-out infinite", // Duração base de 2s
       },
     },
   },
