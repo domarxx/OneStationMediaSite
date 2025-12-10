@@ -11,6 +11,7 @@ const Contact = () => {
       
       <div className="container px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 mb-8 animate-pulse-glow">
             <img src={LogoOSM_White} alt="Logo" className="w-[70%] h-[70%]" />

@@ -9,20 +9,20 @@ const StudiesPreview = () => {
   return (
     <section className="py-16 md:py-24 bg-muted/40">
       <div className="container px-6">
-        <div className="flex items-center justify-between gap-4 mb-8">
-          <div>
-            <p className="text-sm font-semibold tracking-[0.25em] text-muted-foreground uppercase">
-              Estudos de Caso
-            </p>
-            <h2 className="mt-2 text-2xl md:text-3xl font-display font-bold text-foreground">
-              Resultados que comprovam a performance
-            </h2>
-            <p className="mt-2 text-muted-foreground text-sm md:text-base">
-              Conheça alguns cases recentes em que combinamos dados, criatividade e inventário premium para gerar impacto real para as marcas.
-            </p>
-          </div>
-
+      <div className="flex items-center gap-4 mb-4">
+          <div className="accent-bar h-12" />
+          <span className="text-primary font-semibold tracking-wide uppercase">
+            Estudos de Caso
+          </span>
         </div>
+        
+        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 ">
+            Resultados que comprovam a  <span className="text-gradient">performance</span>.
+        </h2>
+
+        <p className="text-lg text-muted-foreground mb-16">
+          Conheça alguns cases recentes em que combinamos dados, criatividade e inventário premium para gerar impacto real para as marcas.
+        </p>
 
         <div className="grid gap-6 md:grid-cols-3">
           {latestStudies.map((study) => (

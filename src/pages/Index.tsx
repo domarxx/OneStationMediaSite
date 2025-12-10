@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import Services from "@/components/Services";
+import Solutions from "@/components/Solutions";
+import Solutions2 from "@/components/Solutions2";
+import Omnichannel from "@/components/Omnichannel";
 import Differentiators from "@/components/Differentiators";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
@@ -36,8 +37,12 @@ const Index = () => {
         <Hero />
 
         <section id="solucoes">
-          <Features />
-          <Services />
+          <Solutions />
+          <Solutions2 />
+        </section>
+
+        <section id="omnichannel">
+          <Omnichannel />
         </section>
 
         <section id="diferenciais">

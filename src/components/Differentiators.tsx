@@ -1,35 +1,35 @@
-import { Shield, Database, LineChart, Users, Zap, Globe } from "lucide-react";
+import { Shield, Database, LineChart, Users, Zap, Globe, Check } from "lucide-react";
 
 const differentiators = [
   {
     icon: Database,
-    title: "FIRST PARTY DATA",
-    description: "Captura de Device IDs formando base proprietária tratada com técnicas de Data Quality.",
-  },
-  {
-    icon: Shield,
-    title: "LGPD COMPLIANT",
-    description: "100% em conformidade com a Lei Geral de Proteção de Dados.",
+    title: "DATA SCIENCE - COMPILAÇÃO DE IDS",
+    description: "Nossa tecnologia permite capturar o Device IDs dos aparelhos celulares, formando uma base proprietária First Party) que e tratada e estruturada com técnicas de Data Quality, gerando assim uma inteligência que tem auxiliado otimizações e assertividade das campanhas. Tudo em conformidade ao LGPD. Os IDs específicos de cada campanha pode ser compartilhada com o cliente, podendo ser trabalhada em campanhas de Meta, Tik Tok e Linkedin.",
+    topics: [
+    ]
   },
   {
     icon: LineChart,
     title: "DASHBOARD AVANÇADO",
-    description: "Transparência completa de dados em tempo real com mapas de calor.",
+    description: "Sua Campanha em tempo Real. Transparência completa de dados de entrega. Possibilitando tomadas de decisão imediata para uma campanha de sucesso. Transparência Completa:",
+    topics: [
+      "Acesso a dados de investimento",
+      "CPM",
+      "CPC",
+      "CPVA"
+    ]
   },
   {
-    icon: Zap,
-    title: "OTIMIZAÇÃO IA",
-    description: "Análise automática para decisões imediatas e campanhas de sucesso.",
-  },
-  {
-    icon: Users,
-    title: "MATCH MULTIPLATAFORMA",
-    description: "IDs compartilhados para campanhas em Meta, TikTok e LinkedIn.",
-  },
-  {
-    icon: Globe,
-    title: "COBERTURA GLOBAL",
-    description: "Acesso a 100% do inventário disponível em todo o mundo.",
+    icon: Shield,
+    title: "VISÃO MACRO E REGIONAL",
+    description: "Confiança e transparência na entrega de dados possibilitando acesso a todos os usuários que necessitarem acompanhar os indicadores.",
+    topics: [
+      "Dados macro da campanha no período selecionado.",
+      "Visão com dados de entrega dia por dia com possibilidade de download para excel.",
+      "Detalhamento de entrega loja a loja.",
+      "Detalhamento de entrega aberta para análise de desempenho.",
+      "Análise de cada criativo para otimização."
+    ]
   },
 ];
 
@@ -57,7 +57,7 @@ const Differentiators = () => {
             <span className="text-gradient">ROI</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mx-auto">
             Esta audiência é sua. Nossa tecnologia entrega inteligência que tem auxiliado otimizações e assertividade das campanhas.
           </p>
         </div>
@@ -81,6 +81,22 @@ const Differentiators = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
+
+                {/* --- AQUI ESTA A NOVA LISTA DE TÓPICOS --- */}
+                {/* mt-auto empurra a lista para baixo se os cards tiverem alturas diferentes */}
+                <ul className="mt-auto space-y-2 pt-4">
+                  {item.topics.map((topic, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      {/* Ícone de Check pequeno e alinhado */}
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span className="text-xs font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors">
+                        {topic}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                
               </div>
             </div>
           ))}

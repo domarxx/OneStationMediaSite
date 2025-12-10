@@ -27,16 +27,16 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-background/90 backdrop-blur-lg border-b border-border/50"
           : "bg-transparent"
       }`}
     >
       <div className="container px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center md:justify-between h-20 gap-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-3 min-w-0 flex-1 md:flex-none">
+            <div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
               <img src={LogoOSM_White} alt="Logo" className="w-[60%] h-[60%]" />
             </div>
             <span className="font-display text-xl font-bold text-foreground">
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground shrink-0 ml-auto"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

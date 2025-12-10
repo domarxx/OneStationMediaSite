@@ -4,38 +4,17 @@ import mobileHand from "@/assets/mobile-hand.jpg";
 const services = [
   {
     icon: Tv,
-    title: "CTV + HHS",
+    title: "CTV + HHS (HOUSEHOLD SYNC)",
     subtitle: "ONDE A TV TERMINA, O IMPACTO CONTINUA",
-    description: "Sincronização CTV-Mobile para entrega de anúncios nos celulares dos espectadores da tela grande, aumentando o engajamento.",
-    stats: ["Smart TV", "Globoplay", "Netflix"],
+    description: "Sincronização CTV-Mobile. Entrega de anúncios nos celulares dos expectadores que estão assistindo na tela grande, aumentando sensivelmente o engajamento da campanha e podendo dar continuidade a jornada Omnichannel. Acesso a 100% do inventario, e todos publishers (streaming) disponíveis no Brasil e no mundo, alem de nossa curadoria. ",
+    stats: ["Segmentações Avançadas", "Audiência", "Contextual", "Geofences", "Deals"],
   },
   {
     icon: PanelTop,
-    title: "DOOH URBAN SYNC",
+    title: "DOOH URBAN SYNC - LOOKAHEAD",
     subtitle: "DO PAINEL DE DOOH À TELA DO CELULAR",
-    description: "Mais de 16.000 pontos e 30.000 telas com sincronização mobile e ativação contextualizada baseada em audiência presente.",
-    stats: ["16k Pontos", "30k Telas", "First Party"],
-  },
-  {
-    icon: MapPin,
-    title: "GEO LIFT IA",
-    subtitle: "O PODER DA MÍDIA MÓVEL",
-    description: "Inteligência que analisa Geofences baseado em mais de 400 fontes confiáveis. Planejamento assertivo para impactar o público em áreas corretas sem dispersão.",
-    stats: ["13k Audiência", "122k População", "19k Fluxo"],
-  },
-  {
-    icon: Store,
-    title: "DRIVE TO STORE",
-    subtitle: "PDV COM O PÚBLICO CERTO",
-    description: "Conecte até 50.000 pontos simultaneamente e analise performance em tempo real: visitas atribuídas, tempo de permanência e criativos.",
-    stats: ["50k Pontos", "Real-time", "Conversão"],
-  },
-  {
-    icon: Layers,
-    title: "RICH MEDIA",
-    subtitle: "FORMATOS DIFERENCIADOS",
-    description: "Mais de 60 tipos de Rich Media pré-formatados e integrados: In Feed, Fullscreen, Native, Push Notification e Social to Prog.",
-    stats: ["+60 Formatos", "In Feed", "Fullscreen"],
+    description: "Análise de dados geográficos estáticos + sinais de móbile em tempo real. Identificação de dispositivos moveis no campo visual dos painéis. Exibição contextualizada baseada em audiência presente. Compilação de dados moveis para retargeting programático ou em mídias sociais, e até para mensuração de visitas ao PDV.",
+    stats: ["+ de 16k pontos", "+ de 30k telas", "Sincronização Mobile", "Ativação DOOH", " First Party Data"],
   },
 ];
 
@@ -59,12 +38,12 @@ const Services = () => {
         <div className="flex items-center gap-4 mb-4">
           <div className="accent-bar h-12" />
           <span className="text-primary font-semibold tracking-wide uppercase">
-            Soluções
+            Distribuição
           </span>
         </div>
 
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 ">
-          Tecnologia de ponta para <span className="text-gradient">resultados excepcionais</span>
+          Tecnologia de ponta para <span className="text-gradient">resultados excepcionais</span>.
         </h2>
 
         <p className="text-lg text-muted-foreground mb-16">
@@ -72,7 +51,7 @@ const Services = () => {
         </p>
 
 {/* Services Grid */}
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
   {services.map((service, index) => (
     <div
       key={service.title}

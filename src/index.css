@@ -90,6 +90,12 @@
     scroll-behavior: smooth;
   }
 
+  html, body {
+    overflow-x: hidden; /* Corta qualquer coisa que tente sair da tela */
+    width: 100%;        /* Garante que o site não passe de 100% da largura */
+    position: relative; /* Ajuda a conter elementos absolutos */
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background: var(--gradient-dark);
@@ -103,6 +109,7 @@
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 60px 60px;
+    background-position: top center;
   }
 
   .text-gradient {

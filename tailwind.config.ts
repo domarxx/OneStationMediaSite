@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -16,7 +21,7 @@ export default {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
         display: ["Poppins", "sans-serif"],
-        heading: ['Neris', 'sans-serif'],
+        heading: ["Neris", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -58,6 +63,7 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      // --- AQUI ESTÃO AS ANIMAÇÕES CORRIGIDAS ---
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -71,13 +77,21 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        // Adicionei o scroll aqui dentro
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",
+        // Adicionei a animação scroll aqui dentro
+        scroll: "scroll 40s linear infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

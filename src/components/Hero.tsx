@@ -25,7 +25,7 @@ const Hero = () => {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-slide-up delay-100">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-4 animate-slide-up delay-100">
             <span className="text-foreground">one station</span> <span className="text-gradient">media</span>
           </h1>
 
@@ -43,12 +43,12 @@ const Hero = () => {
           </div>
           
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 animate-slide-up delay-400">
+          <p className="text-1xl md:text-2xl lg:text-3xl text-muted-foreground max-w-2xl mb-8 animate-slide-up delay-400">
             Atuando em <span className="text-foreground font-semibold">LATAM desde 2019</span>, 
             entregamos campanhas de sucesso para as marcas mais importantes do mercado.
           </p>
 
-          {/* Stats */}
+          {/* Stats 
           <div className="flex flex-wrap justify-center gap-8 mb-12 animate-slide-up delay-500">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary">100%</div>
@@ -65,12 +65,14 @@ const Hero = () => {
               <div className="text-sm font-bold">Acima da Média</div>
             </div>
           </div>
-
+          */}
+          
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-slide-up delay-600">
+          <div className="flex flex-row justify-center gap-3 sm:gap-4 animate-slide-up delay-600">
             <Link to="/#solucoes">
               <Button variant="outline" size="lg">
-                Conheça os Serviços
+                <span className="md:hidden">Soluções</span>
+                <span className="hidden md:inline">Conheça as Soluções</span>
               </Button>
             </Link>
             <Link to="/#contato">
@@ -82,7 +84,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+        <div className="absolute bottom-8 left-0 w-full flex justify-center animate-float">
           <ChevronDown className="w-8 h-8 text-muted-foreground" />
         </div>
       </div>

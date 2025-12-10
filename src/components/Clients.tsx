@@ -1,9 +1,29 @@
 import clientsLogos from "@/assets/clients-logos.jpg";
 
 const clientNames = [
-  "Philips", "Dell", "HP", "Intel", "LG", "Toyota", "Hyundai", "Peugeot",
-  "Siemens", "Nike", "Puma", "Dyson", "Fiat", "Samsung", "Spotify", "Netflix",
-  "HBO Max", "Disney", "Emirates", "Booking", "Zara", "Diesel", "Swarovski", "Pandora"
+  // Tech & Eletrônicos
+  "Philips", "Dell", "HP", "Intel", "LG", "Samsung", "Siemens", "Nokia", "Dyson", "Nikon", "Cognizant", "Zebra", "MSI", "Hansgrohe", "Geberit",
+  
+  // Automotivo
+  "Toyota", "Hyundai", "Peugeot", "Fiat", "BMW", "Kia", "Mazda", "Seat", "Alfa Romeo", "DS Automobiles",
+  
+  // Mídia & Streaming
+  "Spotify", "Netflix", "HBO Max", "Disney", "Hulu", "ESPN", "Warner Bros", "Universal", "Deezer", "Canal+", "BBC", "Sky", "Gaumont",
+  
+  // Moda & Esportes
+  "Nike", "Puma", "Asics", "Salomon", "Levi's", "Zara", "Uniqlo", "Hugo Boss", "Diesel", "G-Star Raw", "Fossil", "Fanatics", "Lacoste", "Petit Bateau", "IKKS", "River Island",
+  
+  // Varejo & E-commerce
+  "Amazon", "eBay", "Carrefour", "Leroy Merlin", "Decathlon", "Lowe's", "Darty", "Boulanger", "Electro Dépôt", "Fnac", "El Corte Inglés",
+  
+  // Viagem & Turismo
+  "Emirates", "Booking.com", "Etihad Airways", "British Airways", "AirAsia", "Vueling", "Havas Voyages", "Samsonite",
+  
+  // Finanças & Seguros
+  "Santander", "Allianz", "American Express", "Chase", "ING", "Sabadell", "Liberty Seguros", "Absa",
+  
+  // Outros (Casa, Joias, Cosméticos)
+  "Swarovski", "Pandora", "Kärcher", "Eucerin", "Ixina", "Exotica"
 ];
 
 const Clients = () => {
@@ -38,12 +58,14 @@ const Clients = () => {
         </div>
 
         {/* Scrolling client names */}
-        <div className="mt-12 overflow-hidden">
-          <div className="flex gap-8 animate-[scroll_30s_linear_infinite]">
-            {[...clientNames, ...clientNames].map((name, index) => (
+        <div className="mt-12 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          {/* O container interno precisa ser largo o suficiente para não quebrar linha */}
+          <div className="flex gap-8 w-max animate-scroll">
+            {/* Renderizamos a lista DUAS vezes para garantir o loop infinito sem buracos */}
+            {[...clientNames].map((name, index) => (
               <span
                 key={`${name}-${index}`}
-                className="text-sm text-muted-foreground whitespace-nowrap font-medium"
+                className="text-sm text-muted-foreground whitespace-nowrap font-medium select-none"
               >
                 {name}
               </span>

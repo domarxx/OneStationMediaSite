@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 One Station Media. Todos os direitos reservados.
+            © 2025 One Station Media. Todos os direitos reservados.
           </p>
         </div>
       </div>
