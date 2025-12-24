@@ -16,4 +16,12 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // --- AJUSTE FEITO AQUI ---
+  build: {
+    // "es2015" garante compatibilidade com iOS antigos e WebViews (WhatsApp/Instagram)
+    target: "es2015", 
+    outDir: "dist",
+    // Opcional: minificar com 'terser' as vezes ajuda em bugs de safari, 
+    // mas o padrão 'esbuild' costuma ser suficiente com o target acima.
+  }
 }));
