@@ -37,7 +37,7 @@ const App = () => (
         
         {/* 2. ADICIONE O BOTÃO AQUI (Logo após o fechamento de Routes) */}
         <a
-          href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20mais%20informações."
+          href="https://wa.me/5511941485853?text=Olá,%20gostaria%20de%20mais%20informações."
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 animate-bounce-slow"
