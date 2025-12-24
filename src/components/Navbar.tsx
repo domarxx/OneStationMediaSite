@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
-import osm_logo from "/osm_logo.svg";
+import osm_logo from "/osm_logo_2.svg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
