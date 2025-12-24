@@ -41,13 +41,13 @@ const PdvPublicoCerto = () => {
   }, []);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
-      <div className="container px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-background">
+      <div className="container px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           
-          {/* LADO ESQUERDO: Texto e Lista (Sem alterações) */}
+          {/* LADO ESQUERDO: Texto e Lista */}
           <div className="flex flex-col animate-slide-right">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4 md:mb-6">
               <div className="accent-bar h-12 w-1 bg-primary" />
               <div className="flex flex-col">
                 <span className="text-primary font-semibold tracking-wide uppercase text-sm">
@@ -59,25 +59,25 @@ const PdvPublicoCerto = () => {
               </div>
             </div>
 
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
               PDV com o <span className="text-gradient">Público Certo</span>
             </h2>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
               Conecte até 50.000 pontos simultaneamente e analise performance em tempo real:
             </p>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4 md:gap-5">
               {metrics.map((item, index) => (
-                <div key={index} className="flex items-center gap-4 group">
+                <div key={index} className="flex items-center gap-3 md:gap-4 group">
                   <div className={`shrink-0 p-2 rounded-full transition-colors ${
                     item.color === 'primary' 
                       ? 'bg-primary/10 text-primary group-hover:bg-primary/20' 
                       : 'bg-secondary/10 text-secondary group-hover:bg-secondary/20'
                   }`}>
-                    <item.icon className="w-5 h-5" />
+                    <item.icon className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <span className="text-base text-muted-foreground group-hover:text-foreground transition-colors">
+                  <span className="text-sm md:text-base text-muted-foreground group-hover:text-foreground transition-colors">
                     {item.text}
                   </span>
                 </div>
@@ -86,13 +86,13 @@ const PdvPublicoCerto = () => {
           </div>
 
           {/* LADO DIREITO: Bloco de Transição Animada */}
-          <div className="relative flex items-center justify-center lg:justify-end animate-slide-left h-full min-h-[500px]">
+          <div className="relative flex items-center justify-center lg:justify-end animate-slide-left h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] mt-8 lg:mt-0">
             
             {/* Glow de fundo */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 rounded-full" />
             
             {/* Container Principal da Animação */}
-            <div className="relative z-10 w-full h-[500px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm group">
+            <div className="relative z-10 w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm group">
               
               {/* Mapeia as imagens e controla a opacidade */}
               {images.map((src, index) => (
@@ -113,15 +113,14 @@ const PdvPublicoCerto = () => {
               ))}
 
               {/* Badge Flutuante (Fixo por cima da transição) */}
-              {/* Ele fica fora do map das imagens para não piscar durante a troca */}
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 flex items-center justify-between">
                 
                 {/* Info Box */}
-                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-black/80 border border-white/10 backdrop-blur-md shadow-lg">
-                  <Store className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-2 md:gap-3 px-3 py-2 md:px-4 md:py-3 rounded-lg bg-black/80 border border-white/10 backdrop-blur-md shadow-lg">
+                  <Store className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold text-white">Loja Conectada</span>
-                    <span className="text-[10px] text-white/60">Monitoramento Ativo</span>
+                    <span className="text-[10px] md:text-xs font-bold text-white">Loja Conectada</span>
+                    <span className="text-[8px] md:text-[10px] text-white/60">Monitoramento Ativo</span>
                   </div>
                 </div>
 
@@ -131,7 +130,7 @@ const PdvPublicoCerto = () => {
                     <div 
                       key={idx}
                       className={`h-2 w-2 rounded-full transition-all duration-500 ${
-                        currentImage === idx ? "bg-primary w-6" : "bg-white/30"
+                        currentImage === idx ? "bg-primary w-4 md:w-6" : "bg-white/30"
                       }`}
                     />
                   ))}

@@ -102,10 +102,10 @@ const Hero = () => {
           
           {/* CTA */}
           <div className="flex flex-row justify-center gap-3 sm:gap-4 animate-slide-up delay-600">
-            <Link to="/#solucoes">
+            <Link to="/#Multiplataforma">
               <Button variant="outline" size="lg">
-                <span className="md:hidden">Soluções</span>
-                <span className="hidden md:inline">Conheça as Soluções</span>
+                <span className="md:hidden">Diferenciais</span>
+                <span className="hidden md:inline">Diferenciais</span>
               </Button>
             </Link>
             <Link to="/#contato">
@@ -116,9 +116,24 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-0 w-full flex justify-center animate-float">
-          <ChevronDown className="w-8 h-8 text-muted-foreground" />
+
+          {/* Scroll indicator - Automático para a próxima seção */}
+          <div 
+          className="absolute bottom-8 left-0 w-full flex justify-center animate-float cursor-pointer z-20 group"
+          onClick={(e) => {
+            // 1. Encontra a <section> pai onde este botão está
+            const currentSection = e.currentTarget.closest("section");
+            
+            // 2. Encontra o próximo elemento irmão (a próxima seção)
+            const nextSection = currentSection?.nextElementSibling;
+            
+            // 3. Se existir, rola suavemente até ele
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          <ChevronDown className="w-8 h-8 text-muted-foreground transition-colors duration-300 group-hover:text-primary" />
         </div>
       </div>
     </section>

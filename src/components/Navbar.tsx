@@ -30,11 +30,11 @@ const Navbar = () => {
   // Links do Dropdown "Etapas"
   const etapasLinks = [
     { label: "Diferenciais", href: "/#Multiplataforma" },
-    { label: "PrecisionGeoLift", href: "/#PrecisionGeoLift" },
+    { label: "Precision Geo Lift", href: "/#PrecisionGeoLift" },
     { label: "MUA", href: "/#MUA" },
-    { label: "DriveToStore", href: "/#DriveToStore" },
-    { label: "RichMedia", href: "/#RichMedia" },
-    { label: "CTVHHS", href: "/#CTVHHS" },
+    { label: "Drive To Store", href: "/#DriveToStore" },
+    { label: "Rich Media", href: "/#RichMedia" },
+    { label: "CTV + HHS", href: "/#CTVHHS" },
     { label: "DOOH", href: "/#DOOH" },
     { label: "Omnichannel", href: "/#Omnichannel" },
     { label: "1st Party", href: "/#STParty" },
@@ -117,7 +117,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50 h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="md:hidden py-4 border-t border-border/50 h-auto overflow-y-auto">
             <div className="flex flex-col gap-2">
               
               {/* Mobile Dropdown (Etapas) */}
@@ -126,7 +126,7 @@ const Navbar = () => {
                   onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === "etapas" ? null : "etapas")}
                   className="w-full flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2"
                 >
-                  Etapas
+                  Funil Omnichannels
                   <ChevronDown className={`w-4 h-4 transition-transform ${mobileSubmenuOpen === "etapas" ? "rotate-180" : ""}`} />
                 </button>
                 
