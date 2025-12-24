@@ -54,7 +54,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 min-w-0 flex-1 md:flex-none">
-            <img src={osm_logo} alt="Logo" className="w-[60%] h-[60%]" />
+            <img src={osm_logo} alt="Logo" className="w-[90%] h-[90%]" />
             {/*<div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
               
             </div>
