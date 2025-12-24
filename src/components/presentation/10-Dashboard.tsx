@@ -78,7 +78,7 @@ const DashboardIntegrado = () => {
           </div>
 
           {/* Área da Imagem Animada */}
-          <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-2xl">
+          <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 shadow-2xl">
             
             {/* Efeito de Glow no Fundo */}
             <div className="absolute inset-0 bg-primary/10 blur-3xl opacity-20 group-hover:opacity-30 transition-opacity z-0" />
@@ -137,7 +137,7 @@ const DashboardIntegrado = () => {
               
               {/* Card 1 */}
               <div className="group flex flex-col gap-3 md:gap-4">
-                <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
+                <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
                   <img 
                     src={macroDataImg} 
                     alt="Gráficos de Dados Macro" 
@@ -157,7 +157,7 @@ const DashboardIntegrado = () => {
 
               {/* Card 2 */}
               <div className="group flex flex-col gap-3 md:gap-4">
-                <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
+                <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
                   <img 
                     src={dailyViewImg} 
                     alt="Gráfico de Evolução Diária" 
@@ -177,7 +177,7 @@ const DashboardIntegrado = () => {
 
               {/* Card 3 */}
               <div className="group flex flex-col gap-3 md:gap-4 sm:col-span-2 md:col-span-1">
-                <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
+                <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
                   <img 
                     src={regionalDetailImg} 
                     alt="Tabela Regional" 
@@ -202,7 +202,7 @@ const DashboardIntegrado = () => {
               
               {/* Card 4 */}
               <div className="group flex flex-col gap-3 md:gap-4">
-                <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
+                <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
                   <img 
                     src={extraCardImg1} 
                     alt="Extra Card 1" 
@@ -222,7 +222,7 @@ const DashboardIntegrado = () => {
 
               {/* Card 5 */}
               <div className="group flex flex-col gap-3 md:gap-4">
-                <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
+                <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
                   <img 
                     src={extraCardImg2} 
                     alt="Extra Card 2" 

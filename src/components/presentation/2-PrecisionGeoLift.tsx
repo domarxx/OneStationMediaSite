@@ -73,7 +73,7 @@ const OPoderDaMidiaMovel = () => {
             <div className="absolute inset-0 bg-gradient-to-l from-primary/5 to-transparent rounded-3xl" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-3xl rounded-full opacity-30" />
             
-            <div className="relative z-10 w-full h-full rounded-2xl border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm overflow-hidden">
+            <div className="relative z-10 w-full h-full rounded-2xl border-2 border-dashed border-white/20 shadow-2xl bg-black/40 backdrop-blur-sm overflow-hidden">
               <img src={mapImage} alt="Mapa de Calor e Geolocalização" className="w-full h-full object-cover opacity-60" />
 
               {/* Pontos Verdes */}

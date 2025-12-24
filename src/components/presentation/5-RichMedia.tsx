@@ -1,15 +1,13 @@
 import { 
   Layers, 
   Smartphone, 
-  Maximize 
+  Maximize,
+  ArrowRight
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-// Placeholders para as imagens (Celulares e QR Codes)
 import inFeedImage from "@/assets/in-feed.png";
-import inFeedQr from "@/assets/in-feed-qrcode.png";
-
 import fullscreenImage from "@/assets/fullscreen.png";
-import fullscreenQr from "@/assets/fullscreen-qrcode.png";
 
 const traditionalFormats = [
   "IABs", "Vídeo", "Áudio", "Native", "Push Notification", "Social to Prog"
@@ -43,7 +41,6 @@ const FormatosAltoImpacto = () => {
               Além de todos os formatos tradicionais, contamos com mais de 60 tipos diferentes de Rich Media, já pré-formatados e integrados em nossa plataforma.
             </p>
             
-            {/* Badges dos formatos tradicionais */}
             <div className="flex flex-wrap gap-2">
               {traditionalFormats.map((format, index) => (
                 <span 
@@ -58,113 +55,103 @@ const FormatosAltoImpacto = () => {
         </div>
 
         {/* --- GRID DE FORMATOS --- */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-8">
           
-          {/* ================= CARD 1: IN FEED ================= */}
-          <div className="group card-gradient rounded-2xl p-4 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid md:grid-cols-2 gap-4 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
+          {/* ================= CARD 1: IN FEED (Primary Color) ================= */}
+          <div className="group card-gradient rounded-2xl p-3 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid grid-cols-[40%_1fr] md:grid-cols-2 gap-3 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
             
-            {/* --- COLUNA ESQUERDA: IMAGEM DO CELULAR --- */}
-            <div className="relative w-full flex justify-center order-2 md:order-1">
+            {/* Imagem */}
+            <div className="relative w-full flex justify-center items-center h-full">
                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-               
                <img 
                 src={inFeedImage} 
                 alt="Exemplo In Feed no Celular" 
-                className="relative z-10 w-[50%] md:w-[60%] max-w-[150px] md:max-w-[180px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
+                className="relative z-10 w-full max-w-[90px] md:max-w-[160px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
 
-            {/* --- COLUNA DIREITA: TEXTO + QR CODE --- */}
-            <div className="flex flex-col h-full justify-center gap-4 md:gap-6 order-1 md:order-2">
-              
-              {/* Bloco de Texto */}
+            {/* Texto + Botão */}
+            <div className="flex flex-col h-full justify-center gap-2 md:gap-6 py-1 md:py-2">
               <div>
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
                   <div className="shrink-0 inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/20 text-primary group-hover:bg-primary/30 transition-colors">
                     <Smartphone className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <h3 className="font-display text-lg md:text-xl lg:text-2xl font-bold text-foreground">
+                  <h3 className="font-display text-sm md:text-xl lg:text-2xl font-bold text-foreground">
                     IN FEED
                   </h3>
                 </div>
 
                 <div className="space-y-2 md:space-y-3">
                   <div>
-                    <p className="text-sm md:text-base lg:text-lg font-bold text-foreground">Formatos de alto impacto Infeed.</p>
-                    <p className="text-xs md:text-sm text-muted-foreground font-medium">+40 tipos.</p>
+                    <p className="text-xs md:text-base lg:text-lg font-bold text-foreground leading-tight">+40 tipos de formatos.</p>
                   </div>
-                  
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-                    <Layers className="w-3 h-3 md:w-4 md:h-4 text-primary" />
+                  <div className="flex items-start gap-2 text-[10px] md:text-sm text-muted-foreground">
+                    <Layers className="w-3 h-3 md:w-4 md:h-4 text-primary mt-0.5 shrink-0" />
                     <span className="leading-tight">Formatação dinâmica na plataforma.</span>
                   </div>
                 </div>
               </div>
 
-              {/* Bloco do QR Code */}
-              <div className="mt-2">
-                <div className="bg-white p-1.5 md:p-2 rounded-xl w-fit shadow-lg group-hover:shadow-primary/20 transition-shadow">
-                  <img 
-                    src={inFeedQr} 
-                    alt="QR Code In Feed" 
-                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
-                  />
-                </div>
+              <div className="mt-1 md:mt-2">
+                <a href="https://preview.nexd.com/c/4ct5X7ospn" target="_blank" rel="noopener noreferrer">
+                  {/* Botão Padrão (Primary Outline) */}
+                  <Button variant="outline" className="w-auto text-[10px] md:text-sm h-8 md:h-10 gap-2 px-3 border-primary text-primary hover:bg-primary hover:text-white">
+                    Formatos In Feed
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                  </Button>
+                </a>
               </div>
-
             </div>
           </div>
 
-          {/* ================= CARD 2: FULLSCREEN ================= */}
-          <div className="group card-gradient rounded-2xl p-4 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid md:grid-cols-2 gap-4 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
+          {/* ================= CARD 2: FULLSCREEN (Secondary Color) ================= */}
+          <div className="group card-gradient rounded-2xl p-3 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid grid-cols-[40%_1fr] md:grid-cols-2 gap-3 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
             
-            {/* --- COLUNA ESQUERDA: IMAGEM DO CELULAR --- */}
-            <div className="relative w-full flex justify-center order-2 md:order-1">
+            {/* Imagem */}
+            <div className="relative w-full flex justify-center items-center h-full">
                <div className="absolute inset-0 bg-secondary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-               
                <img 
                 src={fullscreenImage} 
                 alt="Exemplo Fullscreen no Celular" 
-                className="relative z-10 w-[50%] md:w-[60%] max-w-[150px] md:max-w-[180px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
+                className="relative z-10 w-full max-w-[90px] md:max-w-[160px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
 
-            {/* --- COLUNA DIREITA: TEXTO + QR CODE --- */}
-            <div className="flex flex-col h-full justify-center gap-4 md:gap-6 order-1 md:order-2">
-              
-              {/* Bloco de Texto */}
+            {/* Texto + Botão */}
+            <div className="flex flex-col h-full justify-center gap-2 md:gap-6 py-1 md:py-2">
               <div>
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
+                <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
                   <div className="shrink-0 inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-secondary/20 text-secondary group-hover:bg-secondary/30 transition-colors">
                     <Maximize className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <h3 className="font-display text-lg md:text-xl lg:text-2xl font-bold text-foreground">
+                  <h3 className="font-display text-sm md:text-xl lg:text-2xl font-bold text-foreground">
                     FULLSCREEN
                   </h3>
                 </div>
 
                 <div className="space-y-2 md:space-y-3">
                   <div>
-                    <p className="text-sm md:text-base lg:text-lg font-bold text-foreground">Formatos de alto impacto Fullscreen.</p>
-                    <p className="text-xs md:text-sm text-muted-foreground font-medium">+20 tipos.</p>
+                    <p className="text-xs md:text-base lg:text-lg font-bold text-foreground leading-tight">+20 tipos de formatos.</p>
                   </div>
-                  
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-                    <Layers className="w-3 h-3 md:w-4 md:h-4 text-secondary" />
+                  <div className="flex items-start gap-2 text-[10px] md:text-sm text-muted-foreground">
+                    <Layers className="w-3 h-3 md:w-4 md:h-4 text-secondary mt-0.5 shrink-0" />
                     <span className="leading-tight">Formatação dinâmica na plataforma.</span>
                   </div>
                 </div>
               </div>
 
-              {/* Bloco do QR Code */}
-              <div className="mt-2">
-                <div className="bg-white p-1.5 md:p-2 rounded-xl w-fit shadow-lg group-hover:shadow-secondary/20 transition-shadow">
-                  <img 
-                    src={fullscreenQr} 
-                    alt="QR Code Fullscreen" 
-                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
-                  />
-                </div>
+              <div className="mt-1 md:mt-2">
+                <a href="https://preview.nexd.com/c/T1jybQVAh3" target="_blank" rel="noopener noreferrer">
+                  {/* ALTERAÇÃO AQUI: Botão com cores secundárias forçadas */}
+                  <Button 
+                    variant="outline" 
+                    className="w-auto text-[10px] md:text-sm h-8 md:h-10 gap-2 px-3 border-secondary text-secondary hover:bg-secondary hover:text-white"
+                  >
+                    Formatos Fullscreen
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                  </Button>
+                </a>
               </div>
 
             </div>

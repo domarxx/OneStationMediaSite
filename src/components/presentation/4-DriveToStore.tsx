@@ -92,7 +92,7 @@ const PdvPublicoCerto = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 rounded-full" />
             
             {/* Container Principal da Animação */}
-            <div className="relative z-10 w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm group">
+            <div className="relative z-10 w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-dashed border-white/20 shadow-2xl bg-black/40 backdrop-blur-sm group">
               
               {/* Mapeia as imagens e controla a opacidade */}
               {images.map((src, index) => (

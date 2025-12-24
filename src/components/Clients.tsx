@@ -47,7 +47,7 @@ const Clients = () => {
         </p>
 
         {/* Clients image showcase */}
-        <div className="relative rounded-2xl overflow-hidden border border-border/30 bg-card/20 p-8">
+        <div className="relative rounded-2xl overflow-hidden border-2 border-dashed border-white/20  bg-card/20 p-8">
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
           
           <img

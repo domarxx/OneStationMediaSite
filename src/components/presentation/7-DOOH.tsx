@@ -121,7 +121,7 @@ const DoohUrbanSync = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 rounded-full" />
             
             {/* Container da Imagem */}
-            <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm group">
+            <div className="relative z-10 w-full rounded-2xl overflow-hidden border-2 border-dashed border-white/20  shadow-2xl bg-black/40 backdrop-blur-sm group">
               <img 
                 src={doohImage} 
                 alt="DOOH e Sincronização Mobile em Ambiente Urbano" 
