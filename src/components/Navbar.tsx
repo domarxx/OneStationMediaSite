@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
-import osm_logo from "/osm_logo_2.svg";
+import osm_logo from "/osm_logo_3.svg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 min-w-0 flex-1 md:flex-none">
-            <img src={osm_logo} alt="Logo" className="w-[80%] h-[80%]" />
+            <img src={osm_logo} alt="Logo" className="w-[35%] h-[35%]" />
             {/*<div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
               
             </div>
