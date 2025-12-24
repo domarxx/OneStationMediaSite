@@ -1,0 +1,80 @@
+import { Target, Globe2, CheckCircle2 } from "lucide-react";
+// Usando o placeholder conforme solicitado
+const mobileImage = "src/assets/mobile-hand.jpg";
+
+const benefits = [    
+    { label: "100% do Inventário Global", icon: Globe2 },
+    { label: "Precisão Avançada", icon: Target }
+  ];
+
+const MultiplataformaProgramaticaOmnichannel = () => {
+  return (
+    <section className="py-24 relative overflow-hidden bg-background">
+      <div className="container px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* LADO ESQUERDO: Texto e Conteúdo */}
+          <div className="flex flex-col justify-center animate-slide-right">
+            
+            {/* Header Tag - "ALCANCE E IMPACTO" do PDF */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="accent-bar h-12 w-1 bg-primary" />
+              <span className="text-primary font-semibold tracking-wide uppercase">
+                Alcance e Impacto
+              </span>
+            </div>
+
+            {/* Título Principal */}
+            {/* Quebrado visualmente para dar peso igual ao PDF */}
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Multiplataforma Programática <span className="text-gradient">Omnichannel</span>
+            </h2>
+
+            {/* Parágrafo 1 - Extraído fielmente do PDF */}
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Alcance e impacto acima da média em toda jornada do funil, reunindo a precisão de nossa tecnologia avançada e uma compra programática em 100% do inventário disponível no mundo.
+            </p>
+
+            {/* Parágrafo 2 - Extraído fielmente do PDF */}
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Desta forma, campanhas com objetivos awareness, consideration, retail e Brand Lift trazem sempre resultados incomparáveis.
+            </p>
+
+            {/* Lista de Benefícios (Checkmarks) */}
+            <div className="flex flex-col sm:flex-row gap-8 mt-2">
+              {benefits.map((item, index) => (
+                <div key={index} className="flex items-center gap-3 group">
+                  <div className="p-1 rounded-full bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                    {/* Aqui renderizamos o ícone específico de cada item */}
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground/80">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+          {/* LADO DIREITO: Imagem (Representando o celular/mão da página 2) */}
+          <div className="relative flex items-center justify-center lg:justify-end animate-slide-left">
+            
+            {/* Glow de fundo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 rounded-full" />
+            
+            {/* Imagem */}
+            <img 
+              src={mobileImage} 
+              alt="Multiplataforma Programática em dispositivo móvel" 
+              className="relative z-10 w-full h-auto max-w-[500px] object-cover rounded-2xl drop-shadow-2xl border border-white/10"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MultiplataformaProgramaticaOmnichannel;
