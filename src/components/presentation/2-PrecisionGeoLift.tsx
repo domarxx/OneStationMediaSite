@@ -8,9 +8,9 @@ import {
 } from "lucide-react";
 
 // Placeholder para a imagem do Mapa com Geofences (Fundo)
-const mapImage = "src/assets/mapa1.jpeg";
+const mapImage = "@/assets/mapa1.jpeg";
 // Placeholder para a imagem do Pin 3D (Sobreposição)
-const pinOverlayImage = "src/assets/area-de-influencia.png"; 
+const pinOverlayImage = "@/assets/area-de-influencia.png"; 
 
 // Dados limpos e formatados (Mantidos)
 const stats = [

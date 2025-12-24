@@ -1,7 +1,7 @@
 import { Rocket, Target, TrendingUp, CheckCircle2 } from "lucide-react";
 
 // Placeholder para a imagem 3D do Foguete
-const rocketImage = "src/assets/rocket.png";
+const rocketImage = "@/assets/rocket.png";
 
 const highlights = [
   { label: "+ PRECISÃO", icon: Target, delay: "100ms" },

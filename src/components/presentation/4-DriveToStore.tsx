@@ -11,8 +11,8 @@ import {
 
 // Defina aqui suas imagens
 const images = [
-  "src/assets/dts1.jpg", // Imagem 0
-  "src/assets/dts2.jpg"     // Imagem 1
+  "@/assets/dts1.jpg", // Imagem 0
+  "@/assets/dts2.jpg"     // Imagem 1
 ];
 
 // Dados das métricas

@@ -1,7 +1,7 @@
 import { ScanFace, TrendingUp } from "lucide-react";
 
 // Placeholder para a imagem ilustrativa
-const performanceImage = "src/assets/seta.png";
+const performanceImage = "@/assets/seta.png";
 
 const metrics = [
   {

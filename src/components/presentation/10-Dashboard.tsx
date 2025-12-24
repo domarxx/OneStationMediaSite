@@ -12,16 +12,16 @@ import {
 
 // Bloco 1: Imagens Animadas (Dashboard Geral)
 const dashOverviewImages = [
-  "src/assets/dash1.jpeg", // Imagem 1 da transição
-  "src/assets/dash2.jpeg"  // Imagem 2 da transição
+  "@/assets/dash1.jpeg", // Imagem 1 da transição
+  "@/assets/dash2.jpeg"  // Imagem 2 da transição
 ];
 
 // Bloco 2: Visão Macro e Regional (5 Imagens)
-const macroDataImg = "src/assets/dash3.png";
-const dailyViewImg = "src/assets/dash4.png";
-const regionalDetailImg = "src/assets/dash5.png";
-const extraCardImg1 = "src/assets/tabela1.png";
-const extraCardImg2 = "src/assets/tabela2.png";
+const macroDataImg = "@/assets/dash3.png";
+const dailyViewImg = "@/assets/dash4.png";
+const regionalDetailImg = "@/assets/dash5.png";
+const extraCardImg1 = "@/assets/tabela1.png";
+const extraCardImg2 = "@/assets/tabela2.png";
 
 const DashboardIntegrado = () => {
   // Estado para controlar a animação das imagens do Bloco 1

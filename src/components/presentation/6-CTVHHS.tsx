@@ -1,7 +1,7 @@
 import { Tv, Smartphone, Wifi, Zap } from "lucide-react";
 
 // Placeholder para a imagem da Família no Sofá assistindo TV
-const tvSyncImage = "src/assets/ctv.jpg";
+const tvSyncImage = "@/assets/ctv.jpg";
 
 // Lista de parceiros de streaming mencionados no PDF
 const streamingPlatforms = [

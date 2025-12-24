@@ -1,6 +1,6 @@
 import { Target, Globe2, CheckCircle2 } from "lucide-react";
 // Usando o placeholder conforme solicitado
-const mobileImage = "src/assets/mobile-hand.jpg";
+const mobileImage = "@/assets/mobile-hand.jpg";
 
 const benefits = [    
     { label: "100% do Inventário Global", icon: Globe2 },
