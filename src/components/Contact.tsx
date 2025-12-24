@@ -62,10 +62,12 @@ const Contact = () => {
           </div>
 
           {/* CTA */}
+          <a href="https://api.whatsapp.com/send?phone=5511941485853&text=Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20One%20Station%20media" target="_blank" rel="noopener noreferrer">
           <Button variant="hero" size="lg" className="group">
             Solicitar Proposta
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
+          </a>
         </div>
       </div>
     </section>
