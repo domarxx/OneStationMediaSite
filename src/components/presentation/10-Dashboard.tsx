@@ -8,20 +8,23 @@ import {
   Target
 } from "lucide-react";
 
+import dash1 from "@/assets/dash1.jpeg";
+import dash2 from "@/assets/dash2.jpeg";
+
 // --- PLACEHOLDERS PARA AS IMAGENS ---
 
 // Bloco 1: Imagens Animadas (Dashboard Geral)
 const dashOverviewImages = [
-  "@/assets/dash1.jpeg", // Imagem 1 da transição
-  "@/assets/dash2.jpeg"  // Imagem 2 da transição
+  dash1,
+  dash2
 ];
 
 // Bloco 2: Visão Macro e Regional (5 Imagens)
-const macroDataImg = "@/assets/dash3.png";
-const dailyViewImg = "@/assets/dash4.png";
-const regionalDetailImg = "@/assets/dash5.png";
-const extraCardImg1 = "@/assets/tabela1.png";
-const extraCardImg2 = "@/assets/tabela2.png";
+import macroDataImg from "@/assets/dash3.png";
+import dailyViewImg from "@/assets/dash4.png";
+import regionalDetailImg from "@/assets/dash5.png";
+import extraCardImg1 from "@/assets/tabela1.png";
+import extraCardImg2 from "@/assets/tabela2.png";
 
 const DashboardIntegrado = () => {
   // Estado para controlar a animação das imagens do Bloco 1

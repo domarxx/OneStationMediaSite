@@ -5,11 +5,11 @@ import {
 } from "lucide-react";
 
 // Placeholders para as imagens (Celulares e QR Codes)
-const inFeedImage = "@/assets/in-feed.png";
-const inFeedQr = "@/assets/in-feed-qrcode.png"; // NOVO: Imagem do QR Code In Feed
+import inFeedImage from "@/assets/in-feed.png";
+import inFeedQr from "@/assets/in-feed-qrcode.png"; // NOVO: Imagem do QR Code In Feed
 
-const fullscreenImage = "@/assets/fullscreen.png";
-const fullscreenQr = "@/assets/fullscreen-qrcode.png"; // NOVO: Imagem do QR Code Fullscreen
+import fullscreenImage from "@/assets/fullscreen.png";
+import fullscreenQr from "@/assets/fullscreen-qrcode.png"; // NOVO: Imagem do QR Code Fullscreen
 
 const traditionalFormats = [
   "IABs", "Vídeo", "Áudio", "Native", "Push Notification", "Social to Prog"

@@ -9,10 +9,13 @@ import {
   Palette 
 } from "lucide-react";
 
+import dts1 from "@/assets/dts1.jpg";
+import dts2 from "@/assets/dts2.jpg";
+
 // Defina aqui suas imagens
 const images = [
-  "@/assets/dts1.jpg", // Imagem 0
-  "@/assets/dts2.jpg"     // Imagem 1
+  dts1, // Imagem 0
+  dts2 // Imagem 1
 ];
 
 // Dados das métricas

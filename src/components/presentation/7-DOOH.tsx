@@ -7,7 +7,7 @@ import {
   } from "lucide-react";
   
   // Placeholder para a imagem de DOOH (Cidade com painéis digitais)
-  const doohImage = "@/assets/dooh.jpeg";
+  import doohImage from "@/assets/dooh.jpeg";
   
   // Estatísticas de Alcance
   const stats = [
