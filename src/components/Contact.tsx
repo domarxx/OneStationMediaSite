@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Globe, Rocket, ArrowRight } from "lucide-react";
+import { Phone, Mail, Globe, ArrowRight } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
 
 

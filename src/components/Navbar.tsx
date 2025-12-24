@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Rocket, Menu, X, ChevronDown } from "lucide-react";
-import LogoOSM from "@/assets/osm_icon.svg";
+import { Menu, X, ChevronDown } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
 
 const Navbar = () => {
@@ -126,7 +125,7 @@ const Navbar = () => {
                   onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === "etapas" ? null : "etapas")}
                   className="w-full flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2"
                 >
-                  Funil Omnichannels
+                  Funil Omnichannel
                   <ChevronDown className={`w-4 h-4 transition-transform ${mobileSubmenuOpen === "etapas" ? "rotate-180" : ""}`} />
                 </button>
                 

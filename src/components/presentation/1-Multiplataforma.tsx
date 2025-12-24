@@ -65,7 +65,7 @@ const MultiplataformaProgramaticaOmnichannel = () => {
             <img 
               src={mobileImage} 
               alt="Multiplataforma Programática em dispositivo móvel" 
-              className="relative z-10 w-full h-auto max-w-[300px] md:max-w-[400px] lg:max-w-[500px] object-cover rounded-2xl drop-shadow-2xl border border-white/10"
+              className="relative z-10 w-full h-auto object-cover rounded-2xl drop-shadow-2xl border border-white/10"
             />
           </div>
 

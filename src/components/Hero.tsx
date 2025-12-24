@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Rocket, ChevronDown } from "lucide-react";
-import LogoOSM from "@/assets/osm_icon.svg";
+import { ChevronDown } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
 
 const DataBeams = () => {
@@ -81,25 +80,6 @@ const Hero = () => {
             entregamos campanhas de sucesso para as marcas mais importantes do mercado.
           </p>
 
-          {/* Stats 
-          <div className="flex flex-wrap justify-center gap-8 mb-12 animate-slide-up delay-500">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">100%</div>
-              <div className="text-sm font-bold">Inventário Global</div>
-            </div>
-            <div className="w-px h-16 bg-border hidden md:block" />
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">1%</div>
-              <div className="text-sm font-bold">CTR Mínimo Garantido</div>
-            </div>
-            <div className="w-px h-16 bg-border hidden md:block" />
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">3x</div>
-              <div className="text-sm font-bold">Acima da Média</div>
-            </div>
-          </div>
-          */}
-          
           {/* CTA */}
           <div className="flex flex-row justify-center gap-3 sm:gap-4 animate-slide-up delay-600">
             <Link to="/#Multiplataforma">
