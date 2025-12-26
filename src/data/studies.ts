@@ -14,8 +14,8 @@ export type Study = {
 export const studies: Study[] = [
   {
     id: "1",
-    slug: "decodificando-o-comprador-de-carros",
-    title: "Decodificando o comprador de carros",
+    slug: "OSM_Decodificando_o_Comprador_de_Carros",
+    title: "OSM_Decodificando_o_Comprador_de_Carros",
     summary:
       "Como entender motivações, barreiras e jornada de compra do brasileiro que considera veículos eletrificados — e transformar atrito em conversão.",
     sector: "Automotivo",
@@ -29,8 +29,8 @@ export const studies: Study[] = [
   },
   {
     id: "2",
-    slug: "decodificando-o-viajante-brasileiro",
-    title: "Decodificando o viajante brasileiro",
+    slug: "OSM_Decodificando_o_Viajante_Brasileiro",
+    title: "OSM_Decodificando_o_Viajante_Brasileiro",
     summary:
       "Um mergulho no novo perfil do viajante brasileiro, que equilibra disciplina financeira, bem-estar emocional e um comportamento cada vez mais digital.",
     sector: "Turismo & Viagens",
@@ -40,7 +40,7 @@ export const studies: Study[] = [
     image: "/pdf/OSM_Decodificando_o_Viajante_Brasileiro.jpg",
     imageAlt:
       "Ilustração de viajante brasileiro equilibrando finanças, bem-estar e experiências de viagem",
-    pdfUrl: "/pdf/decodificando-o-viajante-brasileiro.pdf",
+    pdfUrl: "/pdf/OSM_Decodificando_o_Viajante_Brasileiro.pdf",
   },
 ];
 
