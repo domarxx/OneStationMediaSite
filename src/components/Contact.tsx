@@ -59,17 +59,6 @@ const Contact = () => {
               <span className="text-sm md:text-base text-foreground font-medium break-all">sales@onestationmedia.com</span>
             </a>
 
-            <a
-              href="https://onestationmedia.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-4 py-3 md:px-6 md:py-4 rounded-xl bg-card/50 border-2 border-dashed border-white/20 hover:border-primary/50 transition-colors group"
-            >
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Globe className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-              </div>
-              <span className="text-sm md:text-base text-foreground font-medium">onestationmedia.com</span>
-            </a>
           </div>
 
           {/* CTA */}

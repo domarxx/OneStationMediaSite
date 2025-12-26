@@ -1,4 +1,4 @@
-import { Tv, Smartphone, Wifi, Zap } from "lucide-react";
+import { Tv, Smartphone, Wifi, Zap, Hand } from "lucide-react";
 
 // Placeholder para a imagem da Família no Sofá assistindo TV
 import tvSyncImage from "@/assets/ctv.jpg";
@@ -7,11 +7,11 @@ import tvSyncImage from "@/assets/ctv.jpg";
 const streamingPlatforms = [
   "Pluto TV", "PlayPlus", "Apple TV", "Globo Play", 
   "SKY+", "Claro TV", "Samsung TV", "LG TV", 
-  "ESPN", "CNN", "Roku", "Netflix"
+  "ESPN", "CNN", "Roku",
 ];
 
 const streamingPlatforms2 = [
-  "HBO MAX", "Disney+", "Prime Video"
+  "HBO MAX", "Disney+", "Prime Video", "Netflix"
 ];
 
 const ConnectedTVHouseholdSync = () => {
@@ -62,10 +62,20 @@ const ConnectedTVHouseholdSync = () => {
                 {/* Texto Acesso 100% */}
                 <div className="flex items-start md:items-center gap-3">
                   <div className="p-2 rounded-full bg-secondary/20 text-secondary shrink-0">
-                    <Tv className="w-4 h-4 md:w-5 md:h-5" />
+                    <Wifi className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <p className="text-sm md:text-base text-muted-foreground">
                     <strong className="text-foreground">Acesso a 100% do inventário:</strong> Todos os Publishers disponíveis no Brasil e no mundo.
+                  </p>
+                </div>
+
+                                {/* Texto Segmentações */}
+                                <div className="flex items-start md:items-center gap-3">
+                  <div className="p-2 rounded-full bg-primary/20 text-primary shrink-0">
+                    <Tv className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    <strong className="text-foreground">Segmentações Avançadas:</strong> Audiência, Contextual e Geofences.
                   </p>
                 </div>
 
@@ -88,10 +98,10 @@ const ConnectedTVHouseholdSync = () => {
                 {/* Texto Segmentações */}
                 <div className="flex items-start md:items-center gap-3">
                   <div className="p-2 rounded-full bg-primary/20 text-primary shrink-0">
-                    <Wifi className="w-4 h-4 md:w-5 md:h-5" />
+                    <Hand className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <p className="text-sm md:text-base text-muted-foreground">
-                    <strong className="text-foreground">Segmentações Avançadas:</strong> Audiência, Contextual, Geofences e Deals exclusivos.
+                    <strong className="text-foreground">Deals exclusivos:</strong>
                   </p>
                 </div>
 

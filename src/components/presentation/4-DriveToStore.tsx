@@ -64,7 +64,7 @@ const PdvPublicoCerto = () => {
             </h2>
 
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              Conecte até 50.000 pontos simultaneamente e analise performance em tempo real:
+              Conecte até 20.000 pontos simultaneamente e analise performance em tempo real:
             </p>
 
             <div className="flex flex-col gap-4 md:gap-5">

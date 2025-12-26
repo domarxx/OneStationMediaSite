@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Links */}
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/onestationmedia/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
@@ -27,20 +27,12 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/onestationmedia/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
             >
               <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
-            >
-              <Twitter className="w-5 h-5" />
             </a>
           </div>
 

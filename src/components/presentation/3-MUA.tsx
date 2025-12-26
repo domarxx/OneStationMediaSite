@@ -52,7 +52,7 @@ const MaximizeUserAwareness = () => {
               Tecnologia de análise automática de público saturado por anúncio, com menos propensão ao clique favorecendo o aumento de CTR.
             </p>
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-10 leading-relaxed">
-              Com isso garantimos um CTR mínimo de 1%, o que é um número aproximadamente 3X maior da média do mercado.
+              Com isso garantimos um CTR mínimo de 1% de usuários qualificados, o que é um número 3X maior da média do mercado.
             </p>
 
             {/* Cards de Destaque */}

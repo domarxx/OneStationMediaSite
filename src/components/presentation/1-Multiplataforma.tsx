@@ -1,10 +1,11 @@
-import { Target, Globe2, CheckCircle2 } from "lucide-react";
+import { Target, Globe2, Data } from "lucide-react";
 // Usando o placeholder conforme solicitado
 import mobileImage from "@/assets/mobile-hand.jpg";
 
 const benefits = [    
     { label: "100% do Inventário Global", icon: Globe2 },
-    { label: "Precisão Avançada", icon: Target }
+    { label: "Precisão Avançada", icon: Target },
+    { label: "+ de 30 milhões de IDs", icon: Target }
   ];
 
 const MultiplataformaProgramaticaOmnichannel = () => {

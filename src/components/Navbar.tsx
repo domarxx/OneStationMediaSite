@@ -29,7 +29,7 @@ const Navbar = () => {
 
   // Links do Dropdown "Etapas"
   const etapasLinks = [
-    { label: "Diferenciais", href: "/#Multiplataforma" },
+    { label: "Alcance e Impacto", href: "/#Multiplataforma" },
     { label: "Precision Geo Lift", href: "/#PrecisionGeoLift" },
     { label: "MUA", href: "/#MUA" },
     { label: "Drive To Store", href: "/#DriveToStore" },
