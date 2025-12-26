@@ -26,8 +26,7 @@ const EstudoDetalhe = () => {
                 Estudo não encontrado
               </h1>
               <p className="mt-3 text-muted-foreground text-sm md:text-base">
-                Não encontramos o estudo que você tentou acessar. Ele pode ter
-                sido movido ou ainda está em produção.
+                Não encontramos o estudo que você tentou acessar. Ele pode ter sido movido ou ainda está em produção.
               </p>
               <div className="mt-6">
                 <Link

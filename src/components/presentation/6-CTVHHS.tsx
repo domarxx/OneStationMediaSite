@@ -1,4 +1,4 @@
-import { Tv, Smartphone, Wifi, Zap, Hand } from "lucide-react";
+import { Tv, Smartphone, Wifi, Zap, Handshake } from "lucide-react";
 
 // Placeholder para a imagem da Família no Sofá assistindo TV
 import tvSyncImage from "@/assets/ctv.jpg";
@@ -38,7 +38,7 @@ const ConnectedTVHouseholdSync = () => {
 
             {/* Título Principal */}
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
-              Onde a TV Termina, <span className="text-gradient">o Impacto Continua!</span>
+              Onde a TV Termina, <br></br><span className="text-gradient">o Impacto Continua!</span>
             </h2>
 
             {/* Descrição da Tecnologia */}
@@ -93,12 +93,12 @@ const ConnectedTVHouseholdSync = () => {
               </div>
 
               {/* --- GRUPO 2: SEGMENTAÇÕES --- */}
-              <div className="space-y-3 md:space-y-4 mt-6 md:mt-10">
+              <div className="space-y-3 md:space-y-4 mt-6 md:mt-8">
                 
                 {/* Texto Segmentações */}
                 <div className="flex items-start md:items-center gap-3">
                   <div className="p-2 rounded-full bg-primary/20 text-primary shrink-0">
-                    <Hand className="w-4 h-4 md:w-5 md:h-5" />
+                    <Handshake className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <p className="text-sm md:text-base text-muted-foreground">
                     <strong className="text-foreground">Deals exclusivos:</strong>

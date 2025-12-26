@@ -70,7 +70,7 @@ const PartnersDataSafety = () => {
                   <img 
                     src={url} 
                     alt={`Logo do parceiro ${partnerName} - Brand Safety e Data`}
-                    className="w-auto h-auto max-w-[70%] max-h-[60%] object-contain opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                    className="w-auto h-auto max-w-[70%] max-h-[60%] object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
                   />
                 </div>
               );
