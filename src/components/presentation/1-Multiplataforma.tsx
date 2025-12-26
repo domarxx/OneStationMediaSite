@@ -1,4 +1,4 @@
-import { Target, Globe2, Data } from "lucide-react";
+import { Target, Globe2, } from "lucide-react";
 // Usando o placeholder conforme solicitado
 import mobileImage from "@/assets/mobile-hand.jpg";
 

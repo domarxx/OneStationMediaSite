@@ -22,6 +22,7 @@ const Navbar = () => {
 
   // Links normais
   const navLinks = [
+    { label: "Quem Somos", href: "/Quem Somos", type: "route" as const },
     { label: "Estudos", href: "/estudos", type: "route" as const },
     { label: "Partners", href: "/#Partners", type: "anchor" as const },
     { label: "Clientes", href: "/#clientes", type: "anchor" as const },
