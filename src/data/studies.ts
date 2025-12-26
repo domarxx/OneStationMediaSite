@@ -48,5 +48,3 @@ export const getLatestStudies = (limit: number): Study[] =>
   [...studies]
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .slice(0, limit);
-
-
