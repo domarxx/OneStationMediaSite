@@ -82,12 +82,6 @@ const Hero = () => {
 
           {/* CTA */}
           <div className="flex flex-row justify-center gap-3 sm:gap-4 animate-slide-up delay-600">
-            <Link to="/#Multiplataforma">
-              <Button variant="outline" size="lg">
-                <span className="md:hidden">Diferenciais</span>
-                <span className="hidden md:inline">Diferenciais</span>
-              </Button>
-            </Link>
             <Link to="/#contato">
               <Button variant="hero" size="lg">
                 Fale Conosco
