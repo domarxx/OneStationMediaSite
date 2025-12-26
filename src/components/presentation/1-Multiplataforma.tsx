@@ -5,7 +5,7 @@ import mobileImage from "@/assets/mobile-hand.jpg";
 const benefits = [    
     { label: "100% do Inventário Global", icon: Globe2 },
     { label: "Precisão Avançada", icon: Target },
-    { label: "+ de 30 milhões de IDs", icon: Database }
+    { label: "+ de 300 milhões de IDs", icon: Database }
   ];
 
 const MultiplataformaProgramaticaOmnichannel = () => {
