@@ -151,6 +151,7 @@ const LeadFormModal = ({ isOpen, onClose, onSuccess, studyTitle }: LeadFormModal
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-foreground">Nome Completo</label>
                 <input
+                  name="name"
                   id="name"
                   type="text"
                   placeholder="Seu nome"
@@ -174,6 +175,7 @@ const LeadFormModal = ({ isOpen, onClose, onSuccess, studyTitle }: LeadFormModal
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">E-mail</label>
                 <input
+                  name="email"
                   id="email"
                   type="email" // Importante manter type="email" para teclados mobile
                   placeholder="seu@email.com"
@@ -196,6 +198,7 @@ const LeadFormModal = ({ isOpen, onClose, onSuccess, studyTitle }: LeadFormModal
               <div className="space-y-2">
                 <label htmlFor="phone" className="text-sm font-medium text-foreground">Telefone / WhatsApp</label>
                 <input
+                  name="phone"
                   id="phone"
                   type="tel" // Abre teclado numérico no celular
                   placeholder="(11) 99999-9999"
