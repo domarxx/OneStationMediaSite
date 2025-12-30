@@ -41,7 +41,7 @@ const PdvPublicoCerto = () => {
   }, []);
 
   return (
-    <section id="DriveToStore" className="py-12 md:py-24 relative overflow-hidden bg-background">
+    <section id="DriveToStore" className="py-12 md:py-24 relative overflow-hidden bg-white/[0.01]">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           

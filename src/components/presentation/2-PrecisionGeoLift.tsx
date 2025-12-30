@@ -29,7 +29,7 @@ const activePoints = [
 
 const OPoderDaMidiaMovel = () => {
   return (
-    <section id="PrecisionGeoLift" className="py-12 md:py-24 relative overflow-hidden bg-background">
+    <section id="PrecisionGeoLift" className="py-12 md:py-24 relative overflow-hidden bg-white/[0.01]">
       <div className="container px-4 md:px-6">
         
         {/* GRID PRINCIPAL: 1 coluna no mobile, 2 no desktop */}

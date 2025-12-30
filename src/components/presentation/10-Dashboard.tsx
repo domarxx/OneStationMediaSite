@@ -37,7 +37,7 @@ const DashboardIntegrado = () => {
   }, []);
 
   return (
-    <section id="Dashboard" className="py-12 md:py-24 bg-background relative overflow-hidden">
+    <section id="Dashboard" className="py-12 md:py-24 bg-white/[0.01] relative overflow-hidden">
       <div className="container px-4 md:px-6 space-y-16 md:space-y-24 lg:space-y-32">
 
         {/* ETAPA 1: TRANSPARÊNCIA EM TEMPO REAL */}
