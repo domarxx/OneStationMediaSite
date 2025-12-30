@@ -54,7 +54,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 min-w-0 flex-1 md:flex-none">
-            <img src={osm_logo} alt="One Station Media Logo" className="w-[35%] h-[35%] object-contain" />
+            <img src={osm_logo} alt="One Station Media Logo" className="w-[30%] h-[30%] object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
