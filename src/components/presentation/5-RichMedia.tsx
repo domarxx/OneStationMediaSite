@@ -15,7 +15,7 @@ const traditionalFormats = [
 
 const FormatosAltoImpacto = () => {
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-background">
+    <section id="RichMedia" className="py-12 md:py-24 relative overflow-hidden bg-background">
       <div className="container px-4 md:px-6">
         
         {/* --- CABEÇALHO --- */}

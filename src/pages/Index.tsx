@@ -95,12 +95,12 @@ const Index = () => {
           <PartnersDataSafety />
         </section>
 
-        <section id="ROI">
-          <ROI />
-        </section>
-
         <section id="clientes">
           <Clients />
+        </section>
+
+        <section id="ROI">
+          <ROI />
         </section>
 
         <section id="contato">

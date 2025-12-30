@@ -52,7 +52,7 @@ const PartnersDataSafety = () => {
             Brand Safety e <span className="text-gradient-secondary">Dados Confiáveis</span>
           </h2>
           
-          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
             Parceiros líderes em Brand Safety, Dados e Otimizações criativas para garantir a integridade e a performance da sua marca.
           </p>
         </div>
@@ -70,7 +70,10 @@ const PartnersDataSafety = () => {
                   <img 
                     src={url} 
                     alt={`Logo do parceiro ${partnerName} - Brand Safety e Data`}
-                    className="w-auto h-auto max-w-[70%] max-h-[60%] object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                    // ALTERAÇÃO AQUI:
+                    // 1. 'brightness-0 invert': Branco chapado por padrão.
+                    // 2. 'group-hover:brightness-100 group-hover:invert-0': Cor original no hover.
+                    className="w-auto h-auto max-w-[70%] max-h-[60%] object-contain opacity-70 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
                   />
                 </div>
               );
@@ -82,7 +85,7 @@ const PartnersDataSafety = () => {
           </div>
         )}
 
-        {/* Scrolling Safety names */}
+        {/* Scrolling Safety names 
         <div className="mt-12 md:mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-6 md:gap-8 w-max animate-scroll">
             {[...safetyList, ...safetyList].map((name, index) => (
@@ -94,7 +97,7 @@ const PartnersDataSafety = () => {
               </span>
             ))}
           </div>
-        </div>
+        </div>*/}
 
       </div>
     </section>

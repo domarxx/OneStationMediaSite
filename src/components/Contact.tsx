@@ -1,5 +1,6 @@
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Globe, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import LogoOSM_White from "@/assets/osm_icon_white.svg";
 
 // Componente SVG do WhatsApp (Lucide não tem marcas)
@@ -15,10 +16,49 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const Contact = () => {
+  // 1. Lógica de geração das estrelas (Idêntica ao ROI)
+  const stars = useMemo(() => {
+    return Array.from({ length: 25 }).map((_, i) => ({
+      id: i,
+      top: `${Math.random() * -100}%`, 
+      left: `${Math.random() * 100 + 50}%`,
+      size: Math.random() > 0.5 ? 'w-[2px] h-[2px]' : 'w-[1px] h-[1px]',
+      duration: `${Math.random() * 5 + 5}s`,
+      delay: `${Math.random() * -10}s`
+    }));
+  }, []);
+
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(350_78%_52%/0.1)_0%,transparent_50%)]" />
+    <section id="contato" className="py-12 md:py-24 relative overflow-hidden">
+      
+      {/* 2. Estilos da Animação */}
+      <style>{`
+        @keyframes shooting-star-diagonal {
+          0% { transform: translate(0, 0); opacity: 0; }
+          10% { opacity: 0.8; }
+          90% { opacity: 0.8; }
+          100% { transform: translate(-200vw, 200vh); opacity: 0; }
+        }
+      `}</style>
+
+      {/* Background glow existente */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(350_78%_52%/0.1)_0%,transparent_50%)] z-0" />
+      
+      {/* 3. Camada das Estrelas (Adicionada) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className={`absolute rounded-full bg-white ${star.size} blur-[0.5px]`}
+            style={{
+              top: star.top,
+              left: star.left,
+              boxShadow: '0 0 4px 1px rgba(255, 255, 255, 0.3)',
+              animation: `shooting-star-diagonal ${star.duration} linear infinite ${star.delay}`
+            }}
+          />
+        ))}
+      </div>
       
       <div className="container px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import QuemSomos from "./pages/QuemSomos";
 import Estudos from "./pages/Estudos";
+import EstudoDetalhe from "./pages/EstudoDetalhe";
+import ScrollToAnchor from "@/components/ScrollToAnchor"; // Importe aqui
 
 const queryClient = new QueryClient();
 
@@ -28,10 +30,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToAnchor /> {/* Coloque aqui, DENTRO do BrowserRouter */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/QuemSomos" element={<QuemSomos />} />          
           <Route path="/estudos" element={<Estudos />} />
+          <Route path="/estudos/:slug" element={<EstudoDetalhe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         

@@ -6,7 +6,7 @@ import DataBeams from "@/components/DataBeams"; // Animação do Fundo do Hero
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
       {/* 1. Grid Background (Fixo) */}
       <div className="absolute inset-0 z-0 grid-background opacity-40 bg-top [mask-image:linear-gradient(to_bottom,black_40%,transparent_95%)]"></div> 

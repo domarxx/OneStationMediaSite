@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import LogoOSM_White from "@/assets/osm_icon_white.svg";
-import osm_logo from "/osm_logo_3.svg";
+import osm_logo from "/osm_logo_3.svg"; // Certifique-se que o caminho está correto
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,13 +21,13 @@ const Navbar = () => {
 
   // Links normais
   const navLinks = [
-    { label: "Quem Somos", href: "/QuemSomos", type: "route" as const },
-    { label: "Estudos", href: "/estudos", type: "route" as const },
-    { label: "Partners", href: "/#Partners", type: "anchor" as const },
-    { label: "Clientes", href: "/#clientes", type: "anchor" as const },
-    ];
+    { label: "Quem Somos", href: "/QuemSomos" },
+    { label: "Estudos", href: "/estudos" },
+    { label: "Partners", href: "/#partners" }, // ID minúsculo por convenção
+    { label: "Clientes", href: "/#clientes" },
+  ];
 
-  // Links do Dropdown "Etapas"
+  // Links do Dropdown "Funil Omnichannel"
   const etapasLinks = [
     { label: "Alcance e Impacto", href: "/#Multiplataforma" },
     { label: "Precision Geo Lift", href: "/#PrecisionGeoLift" },
@@ -55,28 +54,22 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 min-w-0 flex-1 md:flex-none">
-            <img src={osm_logo} alt="Logo" className="w-[35%] h-[35%]" />
-            {/*<div className="w-10 h-10 shrink-0 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
-              
-            </div>
-            <span className="font-display text-xl font-bold text-foreground">
-              one station <span className="text-gradient">media</span>
-            </span>*/}
+            <img src={osm_logo} alt="One Station Media Logo" className="w-[35%] h-[35%] object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             
-            {/* DROPDOWN MENU (ETAPAS) */}
+            {/* DROPDOWN MENU (Funil Omnichannel) */}
             <div className="relative group">
-              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none">
+              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none py-2">
                 Funil Omnichannel
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
               
               {/* Área do Dropdown (Absoluta) */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="w-48 bg-background/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl overflow-hidden p-1">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="w-56 bg-background/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl overflow-hidden p-1 max-h-[80vh] overflow-y-auto">
                   {etapasLinks.map((sublink) => (
                     <Link
                       key={sublink.label}
@@ -112,6 +105,7 @@ const Navbar = () => {
           <button
             className="md:hidden p-2 text-foreground shrink-0 ml-auto"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -119,7 +113,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50 h-auto overflow-y-auto">
+          <div className="md:hidden py-4 border-t border-border/50 h-[calc(100vh-80px)] overflow-y-auto pb-20">
             <div className="flex flex-col gap-2">
               
               {/* Mobile Dropdown (Etapas) */}
@@ -134,12 +128,12 @@ const Navbar = () => {
                 
                 {/* Submenu Mobile Expandível */}
                 {mobileSubmenuOpen === "etapas" && (
-                  <div className="flex flex-col bg-white/5 rounded-lg mb-2 overflow-hidden">
+                  <div className="flex flex-col bg-white/5 rounded-lg mb-2 overflow-hidden ml-2 border-l border-white/10">
                     {etapasLinks.map((sublink) => (
                       <Link
                         key={sublink.label}
                         to={sublink.href}
-                        className="px-6 py-3 text-sm text-muted-foreground/80 hover:text-foreground hover:bg-white/5 transition-colors border-l-2 border-transparent hover:border-primary"
+                        className="px-4 py-3 text-sm text-muted-foreground/80 hover:text-foreground hover:bg-white/5 transition-colors block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {sublink.label}
@@ -161,11 +155,13 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              <Link to="/#contato" onClick={() => setIsMobileMenuOpen(false)} className="mt-4">
-                <Button variant="glow" size="sm" className="w-full">
-                  Fale Conosco
-                </Button>
-              </Link>
+              <div className="mt-6 px-2">
+                <Link to="/#contato" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button variant="glow" size="sm" className="w-full h-12 text-base">
+                    Fale Conosco
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}

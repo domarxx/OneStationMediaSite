@@ -22,7 +22,7 @@ const metrics = [
 
 const MaximizeUserAwareness = () => {
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-background">
+    <section id="MUA" className="py-12 md:py-24 relative overflow-hidden bg-background">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           

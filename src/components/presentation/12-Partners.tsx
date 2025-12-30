@@ -1,16 +1,15 @@
 import { Share2 } from "lucide-react";
 
-// 1. Importação Automática das Imagens da pasta 'src/assets/partners'
+// 1. Importação Automática das Imagens
 const logosImports = import.meta.glob('@/assets/partners/*.{png,jpg,jpeg,svg,webp}', { 
   eager: true, 
   query: '?url', 
   import: 'default' 
 });
 
-// Transforma em array de URLs para usar no Grid
 const logoUrls = Object.values(logosImports) as string[];
 
-// 2. Lista de Nomes (Mantida para o texto correndo no rodapé)
+// 2. Lista de Nomes
 const partnersList = [
   "AdColony", "Fyber", "Axonix", "Digital Turbine", "Evadav", 
   "Equativ", "Meta X", "VIOOH", "Index Exchange", "Magnite", 
@@ -20,7 +19,6 @@ const partnersList = [
   "TripleLift", "Google Ad Manager", "MediaSmart", "Display & Video 360"
 ];
 
-// Função para extrair o nome do partner da URL
 const getPartnerNameFromUrl = (url: string): string => {
   const fileName = url.split('/').pop()?.replace(/\.(png|jpg|jpeg|svg|webp)$/i, '') || '';
   return fileName.split('-').map(word => 
@@ -30,7 +28,7 @@ const getPartnerNameFromUrl = (url: string): string => {
 
 const PartnersInventory = () => {
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-background">
+    <section id="partners" className="py-12 md:py-24 relative overflow-hidden bg-background">
       <div className="container px-4 md:px-6">
         
         {/* CABEÇALHO */}
@@ -51,7 +49,7 @@ const PartnersInventory = () => {
             Alcance Global de <span className="text-gradient">Inventário</span>
           </h2>
           
-          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
             Integrações programáticas através de plataformas conectadas, garantindo acesso aos principais publishers e inventory sources do mercado.
           </p>
         </div>
@@ -61,6 +59,10 @@ const PartnersInventory = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 animate-slide-up">
             {logoUrls.map((url, index) => {
               const partnerName = getPartnerNameFromUrl(url);
+              
+              // TRUQUE: Verifica se é o logo problemático
+              const isMediaSmart = url.toLowerCase().includes('mediasmart');
+
               return (
                 <div 
                   key={index}
@@ -69,7 +71,16 @@ const PartnersInventory = () => {
                   <img 
                     src={url} 
                     alt={`Logo do parceiro ${partnerName} - Integração programática`}
-                    className="w-auto h-auto max-w-[70%] max-h-[60%] object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                    className={`
+                      w-auto h-auto max-w-[70%] max-h-[60%] object-contain 
+                      transition-all duration-500
+                      group-hover:scale-110 group-hover:opacity-100 group-hover:filter-none
+                      
+                      ${isMediaSmart 
+                        ? "opacity-80 grayscale contrast-125 group-hover:grayscale-0" // Lógica para o MediaSmart (Fica P&B, não bloco branco)
+                        : "opacity-70 brightness-0 invert group-hover:brightness-100 group-hover:invert-0" // Lógica Padrão (Chapado Branco)
+                      }
+                    `}
                   />
                 </div>
               );
@@ -81,7 +92,7 @@ const PartnersInventory = () => {
           </div>
         )}
 
-        {/* Scrolling Partners names */}
+        {/* Scrolling Partners names 
         <div className="mt-12 md:mt-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-6 md:gap-8 w-max animate-scroll">
             {[...partnersList, ...partnersList].map((name, index) => (
@@ -93,7 +104,7 @@ const PartnersInventory = () => {
               </span>
             ))}
           </div>
-        </div>
+        </div>*/}
 
       </div>
     </section>

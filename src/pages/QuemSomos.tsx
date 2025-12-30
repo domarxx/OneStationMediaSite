@@ -15,7 +15,7 @@ const QuemSomos = () => {
       <main className="pt-24 pb-16 md:pb-24">
         
         {/* --- HERO SECTION --- */}
-        <section className="relative min-h-[50vh] flex items-center overflow-hidden mb-12 md:mb-16">
+        <section id="QuemSomos" className="relative min-h-[50vh] flex items-center overflow-hidden mb-12 md:mb-16">
           {/* Camadas de Background */}
           <div className="absolute inset-0 z-0 grid-background opacity-40 bg-top [mask-image:linear-gradient(to_bottom,black_40%,transparent_95%)]"></div> 
           <DataBeams />

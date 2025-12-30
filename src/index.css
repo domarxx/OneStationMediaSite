@@ -96,6 +96,11 @@
     position: relative; /* Ajuda a conter elementos absolutos */
   }
 
+  /* Isso previne que o menu fixo tape o título da seção quando rolar */
+  section {
+    scroll-margin-top: 80px; /* Ajuste conforme a altura do seu Navbar */
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background: var(--gradient-dark);

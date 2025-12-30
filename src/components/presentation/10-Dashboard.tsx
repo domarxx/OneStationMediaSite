@@ -8,8 +8,8 @@ import {
   Target
 } from "lucide-react";
 
-import dash1 from "@/assets/dash1.jpeg";
-import dash2 from "@/assets/dash2.jpeg";
+import dash1 from "@/assets/dashboard2home.png";
+import dash2 from "@/assets/dashboard1home.png";
 
 // Bloco 1: Imagens Animadas (Dashboard Geral)
 const dashOverviewImages = [
@@ -18,11 +18,11 @@ const dashOverviewImages = [
 ];
 
 // Bloco 2: Visão Macro e Regional (5 Imagens)
-import macroDataImg from "@/assets/dash3.png";
-import dailyViewImg from "@/assets/dash4.png";
-import regionalDetailImg from "@/assets/dash5.png";
-import extraCardImg1 from "@/assets/tabela1.png";
-import extraCardImg2 from "@/assets/tabela2.png";
+import macroDataImg from "@/assets/dashboard2.png";
+import dailyViewImg from "@/assets/dashboard5.png";
+import regionalDetailImg from "@/assets/dashboard1.png";
+import extraCardImg1 from "@/assets/dashboard4.png";
+import extraCardImg2 from "@/assets/dashboard3.png";
 
 const DashboardIntegrado = () => {
   // Estado para controlar a animação das imagens do Bloco 1
@@ -37,7 +37,7 @@ const DashboardIntegrado = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-24 bg-background relative overflow-hidden">
+    <section id="Dashboard" className="py-12 md:py-24 bg-background relative overflow-hidden">
       <div className="container px-4 md:px-6 space-y-16 md:space-y-24 lg:space-y-32">
 
         {/* ETAPA 1: TRANSPARÊNCIA EM TEMPO REAL */}

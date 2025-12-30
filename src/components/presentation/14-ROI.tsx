@@ -23,7 +23,7 @@ const ResultadosROI = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-background flex items-center min-h-[60vh] md:min-h-[80vh]">
+    <section id="ROI" className="py-12 md:py-24 relative overflow-hidden bg-background flex items-center min-h-[60vh] md:min-h-[80vh]">
       
       {/* 1. Gradiente de fundo */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1)_0%,transparent_70%)] z-0" />
