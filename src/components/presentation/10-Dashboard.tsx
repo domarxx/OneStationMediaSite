@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { 
-  LayoutDashboard, 
-  BarChart3, 
-  Map, 
-  PieChart, 
+import {
+  LayoutDashboard,
+  BarChart3,
+  Map,
+  PieChart,
   TrendingUp,
   Target
 } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-gsap-animations";
 
 import dash1 from "@/assets/dashboard2home.png";
 import dash2 from "@/assets/dashboard1home.png";
@@ -25,6 +26,8 @@ import extraCardImg1 from "@/assets/dashboard4.png";
 import extraCardImg2 from "@/assets/dashboard3.png";
 
 const DashboardIntegrado = () => {
+  const ref = useFadeIn({ y: 30, delay: 0.2 });
+
   // Estado para controlar a animação das imagens do Bloco 1
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -38,11 +41,11 @@ const DashboardIntegrado = () => {
 
   return (
     <section id="Dashboard" className="py-12 md:py-24 bg-white/[0.01] relative overflow-hidden">
-      <div className="container px-4 md:px-6 space-y-16 md:space-y-24 lg:space-y-32">
+      <div ref={ref} className="container px-4 md:px-6 space-y-16 md:space-y-24 lg:space-y-32 invisible">
 
         {/* ETAPA 1: TRANSPARÊNCIA EM TEMPO REAL */}
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          
+
           {/* Conteúdo de Texto */}
           <div className="flex flex-col animate-slide-right">
             <div className="flex items-center gap-4 mb-4 md:mb-6">
@@ -79,7 +82,7 @@ const DashboardIntegrado = () => {
 
           {/* Área da Imagem Animada */}
           <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 shadow-2xl">
-            
+
             {/* Efeito de Glow no Fundo */}
             <div className="absolute inset-0 bg-primary/10 blur-3xl opacity-20 group-hover:opacity-30 transition-opacity z-0" />
 
@@ -87,13 +90,12 @@ const DashboardIntegrado = () => {
             {dashOverviewImages.map((src, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
-                  currentImage === index ? "opacity-100 scale-105" : "opacity-0 scale-100"
-                }`}
+                className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${currentImage === index ? "opacity-100 scale-105" : "opacity-0 scale-100"
+                  }`}
               >
-                <img 
-                  src={src} 
-                  alt={`Dashboard Visão ${index + 1}`} 
+                <img
+                  src={src}
+                  alt={`Dashboard Visão ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/10" />
@@ -103,11 +105,10 @@ const DashboardIntegrado = () => {
             {/* Indicadores de Slide */}
             <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex gap-2 z-20">
               {dashOverviewImages.map((_, idx) => (
-                <div 
+                <div
                   key={idx}
-                  className={`h-2 w-2 rounded-full transition-all duration-500 ${
-                    currentImage === idx ? "bg-primary w-4 md:w-6" : "bg-white/30"
-                  }`}
+                  className={`h-2 w-2 rounded-full transition-all duration-500 ${currentImage === idx ? "bg-primary w-4 md:w-6" : "bg-white/30"
+                    }`}
                 />
               ))}
             </div>
@@ -118,7 +119,7 @@ const DashboardIntegrado = () => {
 
         {/* ETAPA 2: VISÃO MACRO E REGIONAL */}
         <div className="flex flex-col">
-          
+
           {/* Cabeçalho da Seção */}
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16 animate-slide-up">
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 px-4">
@@ -131,16 +132,16 @@ const DashboardIntegrado = () => {
 
           {/* Container Principal dos Cards */}
           <div className="flex flex-col gap-6 md:gap-8">
-            
+
             {/* LINHA 1: 3 CARDS */}
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              
+
               {/* Card 1 */}
               <div className="group flex flex-col gap-3 md:gap-4">
                 <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
-                  <img 
-                    src={macroDataImg} 
-                    alt="Gráficos de Dados Macro" 
+                  <img
+                    src={macroDataImg}
+                    alt="Gráficos de Dados Macro"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
@@ -158,9 +159,9 @@ const DashboardIntegrado = () => {
               {/* Card 2 */}
               <div className="group flex flex-col gap-3 md:gap-4">
                 <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
-                  <img 
-                    src={dailyViewImg} 
-                    alt="Gráfico de Evolução Diária" 
+                  <img
+                    src={dailyViewImg}
+                    alt="Gráfico de Evolução Diária"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
@@ -178,9 +179,9 @@ const DashboardIntegrado = () => {
               {/* Card 3 */}
               <div className="group flex flex-col gap-3 md:gap-4 sm:col-span-2 md:col-span-1">
                 <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
-                  <img 
-                    src={regionalDetailImg} 
-                    alt="Tabela Regional" 
+                  <img
+                    src={regionalDetailImg}
+                    alt="Tabela Regional"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
@@ -199,13 +200,13 @@ const DashboardIntegrado = () => {
 
             {/* LINHA 2: 2 CARDS CENTRALIZADOS */}
             <div className="grid sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 md:w-2/3 mx-auto">
-              
+
               {/* Card 4 */}
               <div className="group flex flex-col gap-3 md:gap-4">
                 <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
-                  <img 
-                    src={extraCardImg1} 
-                    alt="Extra Card 1" 
+                  <img
+                    src={extraCardImg1}
+                    alt="Extra Card 1"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
@@ -215,7 +216,7 @@ const DashboardIntegrado = () => {
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-1 md:mb-2">Detalhamento de Entrega</h3>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                  Detalhamento de entrega aberta para análise de desempenho.
+                    Detalhamento de entrega aberta para análise de desempenho.
                   </p>
                 </div>
               </div>
@@ -223,9 +224,9 @@ const DashboardIntegrado = () => {
               {/* Card 5 */}
               <div className="group flex flex-col gap-3 md:gap-4">
                 <div className="relative rounded-xl overflow-hidden border-2 border-dashed border-white/20  bg-black/40 aspect-[4/3] shadow-lg hover:border-secondary/50 transition-all">
-                  <img 
-                    src={extraCardImg2} 
-                    alt="Extra Card 2" 
+                  <img
+                    src={extraCardImg2}
+                    alt="Extra Card 2"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
@@ -235,7 +236,7 @@ const DashboardIntegrado = () => {
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-1 md:mb-2">Análise de Criativo</h3>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                  Análise de cada criativo para otimização..
+                    Análise de cada criativo para otimização..
                   </p>
                 </div>
               </div>

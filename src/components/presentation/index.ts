@@ -1,0 +1,13 @@
+export { default as Multiplataforma } from "./1-Multiplataforma";
+export { default as PrecisionGeoLift } from "./2-PrecisionGeoLift";
+export { default as MUA } from "./3-MUA";
+export { default as DriveToStore } from "./4-DriveToStore";
+export { default as RichMedia } from "./5-RichMedia";
+export { default as CTVHHS } from "./6-CTVHHS";
+export { default as DOOH } from "./7-DOOH";
+export { default as Omnichannel } from "./8-Omnichannel";
+export { default as STParty } from "./9-STParty";
+export { default as Dashboard } from "./10-Dashboard";
+export { default as Partners } from "./12-Partners";
+export { default as PartnersDataSafety } from "./13-PartnersDataSafety";
+export { default as ROI } from "./14-ROI";

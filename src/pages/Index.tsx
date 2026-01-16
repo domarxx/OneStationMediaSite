@@ -2,19 +2,21 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Multiplataforma from "@/components/presentation/1-Multiplataforma";
-import PrecisionGeoLift from "@/components/presentation/2-PrecisionGeoLift";
-import MUA from "@/components/presentation/3-MUA";
-import DriveToStore from "@/components/presentation/4-DriveToStore";
-import RichMedia from "@/components/presentation/5-RichMedia";
-import CTVHHS from "@/components/presentation/6-CTVHHS";
-import DOOH from "@/components/presentation/7-DOOH";
-import STParty from "@/components/presentation/9-STParty";
-import Dashboard from "@/components/presentation/10-Dashboard";
-import Partners from "@/components/presentation/12-Partners";
-import PartnersDataSafety from "@/components/presentation/13-PartnersDataSafety";
-import ROI from "@/components/presentation/14-ROI";
-import Omnichannel from "@/components/presentation/8-Omnichannel";
+import {
+  Multiplataforma,
+  PrecisionGeoLift,
+  MUA,
+  DriveToStore,
+  RichMedia,
+  CTVHHS,
+  DOOH,
+  Omnichannel,
+  STParty,
+  Dashboard,
+  Partners,
+  PartnersDataSafety,
+  ROI,
+} from "@/components/presentation";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -45,63 +47,27 @@ const Index = () => {
       <main>
         <Hero />
 
-        <section id="Multiplataforma">
-          <Multiplataforma />
-        </section>
-
-        <section id="PrecisionGeoLift">
-          <PrecisionGeoLift />
-        </section>
-
-        <section id="MUA">
-          <MUA />
-        </section>
-
-        <section id="DriveToStore">
-          <DriveToStore />
-        </section>
-
-        <section id="RichMedia">
-          <RichMedia />
-        </section>
-
-        <section id="CTVHHS">
-          <CTVHHS />
-        </section>
-
-        <section id="DOOH">
-          <DOOH />
-        </section>
-
-        <section id="Omnichannel">
-          <Omnichannel />
-        </section>
-
-        <section id="STParty">
-          <STParty />
-        </section>
-
-        <section id="Dashboard">
-          <Dashboard />
-        </section>
+        <Multiplataforma />
+        <PrecisionGeoLift />
+        <MUA />
+        <DriveToStore />
+        <RichMedia />
+        <CTVHHS />
+        <DOOH />
+        <Omnichannel />
+        <STParty />
+        <Dashboard />
 
         <StudiesPreview />
 
-        <section id="Partners">
-          <Partners />
-        </section>
-
-        <section id="PartnersDataSafety">
-          <PartnersDataSafety />
-        </section>
+        <Partners />
+        <PartnersDataSafety />
 
         <section id="clientes">
           <Clients />
         </section>
 
-        <section id="ROI">
-          <ROI />
-        </section>
+        <ROI />
 
         <section id="contato">
           <Contact />

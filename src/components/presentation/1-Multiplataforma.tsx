@@ -1,22 +1,25 @@
-import { Target, Globe2, Database} from "lucide-react";
+import { Target, Globe2, Database } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-gsap-animations";
 // Usando o placeholder conforme solicitado
 import mobileImage from "@/assets/mobile-hand.jpg";
 
-const benefits = [    
-    { label: "100% do Inventário Global", icon: Globe2 },
-    { label: "Precisão Avançada", icon: Target },
-    { label: "+ de 300 milhões de IDs", icon: Database }
-  ];
+const benefits = [
+  { label: "100% do Inventário Global", icon: Globe2 },
+  { label: "Precisão Avançada", icon: Target },
+  { label: "+ de 300 milhões de IDs", icon: Database }
+];
 
 const MultiplataformaProgramaticaOmnichannel = () => {
+  const ref = useFadeIn({ y: 30, delay: 0.2 });
+
   return (
     <section id="Multiplataforma" className="py-12 md:py-24 relative overflow-hidden bg-background">
-      <div className="container px-4 md:px-6">
+      <div ref={ref} className="container px-4 md:px-6 invisible">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          
+
           {/* LADO ESQUERDO: Texto e Conteúdo */}
           <div className="flex flex-col justify-center animate-slide-right">
-            
+
             {/* Header Tag - "ALCANCE E IMPACTO" do PDF */}
             <div className="flex items-center gap-4 mb-4 md:mb-6">
               <div className="accent-bar h-12 w-1 bg-primary" />
@@ -58,14 +61,14 @@ const MultiplataformaProgramaticaOmnichannel = () => {
 
           {/* LADO DIREITO: Imagem */}
           <div className="relative flex items-center justify-center lg:justify-end animate-slide-left mt-8 lg:mt-0">
-            
+
             {/* Glow de fundo */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent blur-3xl opacity-60 rounded-full" />
-            
+
             {/* Imagem */}
-            <img 
-              src={mobileImage} 
-              alt="Multiplataforma Programática em dispositivo móvel" 
+            <img
+              src={mobileImage}
+              alt="Multiplataforma Programática em dispositivo móvel"
               className="relative z-10 w-full h-auto object-cover rounded-2xl drop-shadow-2xl border-2 border-dashed border-white/20"
             />
           </div>

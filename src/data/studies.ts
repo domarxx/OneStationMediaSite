@@ -10,7 +10,7 @@ export type Study = {
   imageAlt: string;
   pdfUrl: string; // URL do PDF para download
   detailSubtitle?: string; // Opcional
-  sections?: {             // Opcional
+  sections?: {            // Opcional
     id: string;
     title: string;
     paragraphs: string[];
@@ -31,7 +31,7 @@ export const studies: Study[] = [
     image: "/pdf/OSM_Decodificando_o_Comprador_de_Carros.jpg",
     imageAlt: "Gráfico e ilustrações representando a jornada do consumidor brasileiro de veículos eletrificados",
     pdfUrl: "/pdf/OSM_Decodificando_o_Comprador_de_Carros.pdf",
-    
+
     // Conteúdo extraído do PDF "Comprador de Carros"
     detailSubtitle: "O mercado automotivo atingiu um ponto de inflexão: a mobilidade elétrica migrou de promessa futura para realidade imediata, mas enfrenta um gap crítico entre interesse e conversão real.",
     sections: [
@@ -100,6 +100,49 @@ export const studies: Study[] = [
         paragraphs: [
           "A compra de viagem hoje é validada socialmente. O Instagram e TikTok funcionam como vitrines ativas ('feedbooking'), onde inspiração e conversão se misturam.",
           "A Inteligência Artificial surge não para substituir o viajante, mas para empoderá-lo: ele quer curadoria personalizada e simulação financeira, mas exige manter o controle final da decisão para evitar frustrações."
+        ]
+      }
+    ]
+  },
+  {
+    id: "3",
+    slug: "OSM_Decodificando_o_Carnaval_do_Brasileiro",
+    title: "Decodificando o Carnaval do Brasileiro",
+    summary:
+      "Uma análise profunda da dualidade do consumidor — da folia intensa ao descanso no sofá — e como marcas podem navegar esses contextos opostos.",
+    sector: "Varejo & Consumo",
+    resultHighlight:
+      "7 em cada 10 brasileiros veem o Carnaval como símbolo cultural, mas o público se divide drasticamente entre a 'busca pela festa' e o 'refúgio em casa'.",
+    date: "2024-02-10",
+    image: "/pdf/OSM_Decodificando_o_Carnaval_do_Brasileiro.jpg",
+    imageAlt: "Ilustração representativa do Carnaval Brasileiro e comportamento de consumo",
+    pdfUrl: "/pdf/OSM_Decodificando_o_Carnaval_do_Brasileiro.pdf",
+
+    // Conteúdo atualizado com base no PDF fornecido
+    detailSubtitle: "O Carnaval não é uma festa única para todos. Identificamos quatro perfis distintos de comportamento — do peregrino que viaja ao sossego que fica em casa — exigindo estratégias de mídia que vão muito além do óbvio.",
+    sections: [
+      {
+        id: "dualidade",
+        title: "Folia ou Sofá: A Dualidade do Consumo",
+        paragraphs: [
+          "O Carnaval é uma potente alavanca econômica, mas o comportamento do consumidor é dual. Enquanto uma parcela busca a agitação das ruas, outra vê no feriado a chance de recarregar as energias.",
+          "Dados revelam que 57% dos brasileiros não participam ativamente da folia, criando um mercado massivo de 'Sossego' que consome streaming e delivery, enquanto os outros 43% ocupam as ruas e impulsionam o turismo e o varejo físico."
+        ]
+      },
+      {
+        id: "perfis",
+        title: "Os 4 Perfis de Folião (e de Não-Folião)",
+        paragraphs: [
+          "Mapeamos quatro arquétipos: o 'Folião Peregrino', que viaja e gasta com experiências e visual; o 'Folião de Bairro', fiel às tradições locais e à TV; o 'Sossego da Folia', majoritariamente masculino e 42+, que busca refúgio; e o 'Tradição à Distância', que vive a festa de forma discreta e econômica.",
+          "Compreender essas nuances é vital: o Peregrino é o alvo ideal para serviços de conveniência e marcas premium, enquanto o grupo do Sossego representa uma oportunidade negligenciada para streaming e produtos de conforto."
+        ]
+      },
+      {
+        id: "midia",
+        title: "O Papel da Mídia e Oportunidades",
+        paragraphs: [
+          "A TV aberta segue como protagonista para 90% da audiência doméstica, mas o mobile tornou-se transacional: 53% já compraram via WhatsApp e 39% pelo Instagram.",
+          "As oportunidades estratégicas incluem o uso de Geofencing para capturar o público em 'zonas de sombra' da concorrência e ações de 'Drive-to-Store' para compras por impulso, conectando a exposição digital ao consumo físico imediato."
         ]
       }
     ]

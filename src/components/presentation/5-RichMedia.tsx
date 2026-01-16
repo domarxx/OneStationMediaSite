@@ -1,9 +1,10 @@
-import { 
-  Layers, 
-  Smartphone, 
+import {
+  Layers,
+  Smartphone,
   Maximize,
   ArrowRight
 } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-gsap-animations";
 import { Button } from "@/components/ui/button";
 
 import inFeedImage from "@/assets/in-feed.png";
@@ -14,10 +15,12 @@ const traditionalFormats = [
 ];
 
 const FormatosAltoImpacto = () => {
+  const ref = useFadeIn({ y: 30, delay: 0.2 });
+
   return (
     <section id="RichMedia" className="py-12 md:py-24 relative overflow-hidden bg-background">
-      <div className="container px-4 md:px-6">
-        
+      <div ref={ref} className="container px-4 md:px-6 invisible">
+
         {/* --- CABEÇALHO --- */}
         <div className="flex flex-col animate-slide-right mb-8 md:mb-16">
           <div className="flex items-center gap-4 mb-4">
@@ -40,11 +43,11 @@ const FormatosAltoImpacto = () => {
             <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               Além de todos os formatos tradicionais, contamos com mais de 60 tipos diferentes de Rich Media, já pré-formatados e integrados em nossa plataforma.
             </p>
-            
+
             <div className="flex flex-wrap gap-2">
               {traditionalFormats.map((format, index) => (
-                <span 
-                  key={index} 
+                <span
+                  key={index}
                   className="px-2 py-1 md:px-3 md:py-1 rounded-full border border-white/10 bg-secondary/20 text-[10px] md:text-xs font-medium text-muted-foreground"
                 >
                   {format}
@@ -56,16 +59,16 @@ const FormatosAltoImpacto = () => {
 
         {/* --- GRID DE FORMATOS --- */}
         <div className="grid lg:grid-cols-2 gap-4 md:gap-8">
-          
+
           {/* ================= CARD 1: IN FEED (Primary Color) ================= */}
           <div className="group card-gradient rounded-2xl p-3 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid grid-cols-[40%_1fr] md:grid-cols-2 gap-3 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
-            
+
             {/* Imagem */}
             <div className="relative w-full flex justify-center items-center h-full">
-               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-               <img 
-                src={inFeedImage} 
-                alt="Exemplo In Feed no Celular" 
+              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+              <img
+                src={inFeedImage}
+                alt="Exemplo In Feed no Celular"
                 className="relative z-10 w-full max-w-[90px] md:max-w-[160px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
@@ -107,13 +110,13 @@ const FormatosAltoImpacto = () => {
 
           {/* ================= CARD 2: FULLSCREEN (Secondary Color) ================= */}
           <div className="group card-gradient rounded-2xl p-3 md:p-6 lg:p-8 border-2 border-dashed border-white/20 hover-glow grid grid-cols-[40%_1fr] md:grid-cols-2 gap-3 md:gap-6 items-center transition-all duration-500 relative overflow-hidden">
-            
+
             {/* Imagem */}
             <div className="relative w-full flex justify-center items-center h-full">
-               <div className="absolute inset-0 bg-secondary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-               <img 
-                src={fullscreenImage} 
-                alt="Exemplo Fullscreen no Celular" 
+              <div className="absolute inset-0 bg-secondary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+              <img
+                src={fullscreenImage}
+                alt="Exemplo Fullscreen no Celular"
                 className="relative z-10 w-full max-w-[90px] md:max-w-[160px] lg:max-w-[220px] h-auto object-contain drop-shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
@@ -144,8 +147,8 @@ const FormatosAltoImpacto = () => {
               <div className="mt-1 md:mt-2">
                 <a href="https://preview.nexd.com/c/T1jybQVAh3" target="_blank" rel="noopener noreferrer">
                   {/* ALTERAÇÃO AQUI: Botão com cores secundárias forçadas */}
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-auto text-[10px] md:text-sm h-8 md:h-10 gap-2 px-3 border-secondary text-secondary hover:bg-secondary hover:text-white"
                   >
                     Formatos Fullscreen

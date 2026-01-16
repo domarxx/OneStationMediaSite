@@ -1,14 +1,15 @@
-import { 
-  Users, 
-  MapPin, 
-  Footprints, 
-  GraduationCap, 
-  Wallet, 
-  TrendingUp 
+import {
+  Users,
+  MapPin,
+  Footprints,
+  GraduationCap,
+  Wallet,
+  TrendingUp
 } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-gsap-animations";
 
 import mapImage from "@/assets/mapa1.jpeg";
-import pinOverlayImage from "@/assets/area-de-influencia.png"; 
+import pinOverlayImage from "@/assets/area-de-influencia.png";
 
 const stats = [
   { label: "Audiência (7 dias)", value: "13k", icon: Users, color: "primary" },
@@ -28,16 +29,18 @@ const activePoints = [
 ];
 
 const OPoderDaMidiaMovel = () => {
+  const ref = useFadeIn({ y: 30, delay: 0.2 });
+
   return (
     <section id="PrecisionGeoLift" className="py-12 md:py-24 relative overflow-hidden bg-white/[0.01]">
-      <div className="container px-4 md:px-6">
-        
+      <div ref={ref} className="container px-4 md:px-6 invisible">
+
         {/* GRID PRINCIPAL: 1 coluna no mobile, 2 no desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 items-start">
-          
+
           {/* --- BLOCO 1: TEXTO (Order 1 no Mobile | Coluna 1 no Desktop) --- */}
           <div className="flex flex-col animate-slide-right order-1 lg:col-start-1 lg:row-start-1">
-            
+
             {/* Tag */}
             <div className="flex items-center gap-4 mb-4 md:mb-6">
               <div className="accent-bar h-12 w-1 bg-primary" />
@@ -68,11 +71,11 @@ const OPoderDaMidiaMovel = () => {
           {/* --- BLOCO 2: MAPA (Order 2 no Mobile | Coluna 2 / Linhas 1 e 2 no Desktop) --- */}
           {/* row-span-2 faz ele ocupar toda a altura da direita, ao lado do texto E dos cards */}
           <div className="relative animate-slide-left order-2 w-full h-[300px] lg:h-full min-h-[300px] lg:min-h-[500px] lg:col-start-2 lg:row-start-1 lg:row-span-2 rounded-2xl overflow-visible">
-            
+
             {/* Conteúdo do Mapa */}
             <div className="absolute inset-0 bg-gradient-to-l from-primary/5 to-transparent rounded-3xl" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-3xl rounded-full opacity-30" />
-            
+
             <div className="relative z-10 w-full h-full rounded-2xl border-2 border-dashed border-white/20 shadow-2xl bg-black/40 backdrop-blur-sm overflow-hidden">
               <img src={mapImage} alt="Mapa de Calor e Geolocalização" className="w-full h-full object-cover opacity-60" />
 
@@ -98,11 +101,11 @@ const OPoderDaMidiaMovel = () => {
 
             {/* Pin 3D (Visível apenas em sm/lg para não tapar o mapa no mobile muito pequeno) */}
             <div className="absolute -top-6 -right-6 md:-top-12 md:-right-12 lg:-top-16 lg:-right-10 w-32 md:w-48 lg:w-64 xl:w-80 z-30 pointer-events-none hidden sm:block">
-              <img 
-                src={pinOverlayImage} 
-                alt="Destaque Geofence 3D" 
+              <img
+                src={pinOverlayImage}
+                alt="Destaque Geofence 3D"
                 className="w-full h-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] animate-float"
-                style={{ animationDuration: '4s' }} 
+                style={{ animationDuration: '4s' }}
               />
             </div>
           </div>
@@ -111,7 +114,7 @@ const OPoderDaMidiaMovel = () => {
           <div className="animate-slide-right order-3 lg:col-start-1 lg:row-start-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {stats.map((stat, index) => (
-                <div 
+                <div
                   key={index}
                   className="relative group card-gradient rounded-xl p-3 md:p-4 border-2 border-dashed border-white/20 hover-glow flex items-center gap-3 md:gap-4"
                 >
@@ -120,11 +123,10 @@ const OPoderDaMidiaMovel = () => {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                   </div>
 
-                  <div className={`shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg transition-colors ${
-                    stat.color === 'primary' 
-                      ? 'bg-primary/20 text-primary group-hover:bg-primary/30' 
+                  <div className={`shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg transition-colors ${stat.color === 'primary'
+                      ? 'bg-primary/20 text-primary group-hover:bg-primary/30'
                       : 'bg-secondary/20 text-secondary group-hover:bg-secondary/30'
-                  }`}>
+                    }`}>
                     <stat.icon className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
 

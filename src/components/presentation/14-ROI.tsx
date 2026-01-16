@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Rocket, Target, TrendingUp, CheckCircle2 } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-gsap-animations";
 
 // Placeholder para a imagem 3D do Foguete
 import rocketImage from "@/assets/rocket.png";
@@ -11,10 +12,12 @@ const highlights = [
 ];
 
 const ResultadosROI = () => {
+  const ref = useFadeIn({ y: 30, delay: 0.2 });
+
   const stars = useMemo(() => {
     return Array.from({ length: 25 }).map((_, i) => ({
       id: i,
-      top: `${Math.random() * -100}%`, 
+      top: `${Math.random() * -100}%`,
       left: `${Math.random() * 100 + 50}%`,
       size: Math.random() > 0.5 ? 'w-[2px] h-[2px]' : 'w-[1px] h-[1px]',
       duration: `${Math.random() * 5 + 5}s`,
@@ -24,10 +27,10 @@ const ResultadosROI = () => {
 
   return (
     <section id="ROI" className="py-12 md:py-24 relative overflow-hidden bg-background flex items-center min-h-[60vh] md:min-h-[80vh]">
-      
+
       {/* 1. Gradiente de fundo */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1)_0%,transparent_70%)] z-0" />
-      
+
       <style>{`
         /* Keyframes */
         @keyframes rocket-float {
@@ -64,22 +67,22 @@ const ResultadosROI = () => {
         ))}
       </div>
 
-      <div className="container px-4 md:px-6 relative z-10">
+      <div ref={ref} className="container px-4 md:px-6 relative z-10 invisible">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          
+
           {/* LADO ESQUERDO: Imagem Foguete */}
           <div className="relative flex justify-center animate-slide-right order-1">
             <div className="absolute inset-0 bg-primary/30 blur-[100px] rounded-full opacity-50 z-10" />
-            
+
             {/* Animação do Foguete (Flutuar): Ativa em TODOS os dispositivos novamente */}
-            <div 
+            <div
               className="relative z-20"
               style={{ animation: 'rocket-float 3s ease-in-out infinite' }}
             >
               {/* Animação do Foguete (Balançar): Ativa em TODOS os dispositivos novamente */}
-              <img 
-                src={rocketImage} 
-                alt="Foguete representando crescimento e ROI" 
+              <img
+                src={rocketImage}
+                alt="Foguete representando crescimento e ROI"
                 className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-[0_0_50px_rgba(var(--primary),0.5)]"
                 style={{ animation: 'rocket-sway 5s ease-in-out infinite' }}
               />
@@ -90,11 +93,11 @@ const ResultadosROI = () => {
           <div className="flex flex-col items-center md:items-start animate-slide-left order-2 z-20">
             <div className="flex flex-col w-fit md:w-full">
               <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-left">
-                One Station <span className="text-gradient">Media</span> 
+                One Station <span className="text-gradient">Media</span>
               </h2>
               <div className="flex flex-col gap-4 md:gap-6 w-full">
                 {highlights.map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="flex items-center justify-start gap-3 md:gap-6 group w-full"
                     style={{ animationDelay: item.delay }}
